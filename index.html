@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Ativa Filtros LTDA</title>
+
+    <!-- Melhor prática: carregar JS com defer -->
+    <script src="./scripts.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">Ativa Filtros</div>
+
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>Sobre</li>
+                <li>Produtos</li>
+                <li>Mercado</li>
+                <li>Contatos</li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <div class="tech-circle">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+
+        <div class="list">
+            <div class="item active">
+                <div class="product-img">
+                    <img src="./img/carcFilInox304316.png">
+                </div>
+                <div class="content">
+                    <p class="product-tag">Filtros de processos</p>
+                    <p class="product-name">CARCAÇAS DE FILTROS EM AÇO INOX 304 OU 316</p>
+                    <p class="description">Carcaças completas para filtros cartucho e tipo BAG em aço inox.</p>
+                    <button class="btn">Saiba Mais</button>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="product-img">
+                    <img src="./img/elFilCart.png">
+                </div>
+                <div class="content">
+                    <p class="product-tag">Filtros de processos</p>
+                    <p class="product-name">Elementos filtrantes tipo cartucho</p>
+                    <p class="description">
+                        Elementos diversos em todos dimensionais e alturas, carvão ativado, polipropileno, microbiológicos, resinados, inox etc.
+                    </p>
+                    <button class="btn">Saiba Mais</button>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="product-img">
+                    <img src="./img/bagBolsa.png">
+                </div>
+                <div class="content">
+                    <p class="product-tag">Filtros de processos</p>
+                    <p class="product-name">Filtros Bag Bolsa</p>
+                    <p class="description">
+                        Elementos em nylon, polipropileno e poliéster em todos os tamanhos e grau de filtragem.
+                    </p>
+                    <button class="btn">Saiba Mais</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="arrows">
+            <button class="arrow-btn" id="prev">◀</button>
+            <button class="arrow-btn" id="next">▶</button>
+        </div>
+
+        <div class="indicators">
+            <div class="numbers">01</div>
+            <div class="dots">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+</html>
