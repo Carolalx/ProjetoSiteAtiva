@@ -342,18 +342,24 @@ h1 {
 }
 
 h2 {
-    margin-top: 30px;
-    margin-bottom: 15px;
+
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 h3 {
-    margin-top: 20px;
+    display: flex;
+    margin-top: 50px;
     margin-bottom: 10px;
+    align-items: center;
+    justify-content: center;
+    white-space: pre-line;
 }
 
 /* Parágrafos */
 p {
-    margin-bottom: 5%;
+    margin-top: 10px;
+    margin-bottom: 70px;
     line-height: 1.5;
     white-space: pre-line; /* Mantém quebras de linha que você usou no texto */
 }
@@ -381,6 +387,13 @@ img {
     overflow-y: auto !important;
     height: auto !important;
     position: static !important;
+}
+
+.linha-centralizada {
+  width: 90%;
+  height: 2px;
+  background-color: #ccc;
+  margin: 10px auto; /* centraliza automaticamente */
 }
 
 /* Deixa o menu no canto superior direito APENAS na página sobre */
@@ -567,3 +580,13 @@ img {
     }
 }
 
+.box {
+    display: flex;
+    align-items: center; /* centraliza verticalmente */
+    gap: 15px; /* espaço entre imagem e texto */
+}
+
+.box img {
+    width: 200px;
+    height: auto;
+}
