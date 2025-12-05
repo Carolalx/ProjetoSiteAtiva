@@ -124,6 +124,27 @@ header nav li:hover:after {
     opacity: 1;
     transform: translateX(0);
 }
+  
+/* ESITLO ICONE WHATS */
+.whats-float {
+              position: fixed;
+              bottom: 20px;
+              right: 20px;
+              width: 65px;
+              height: 65px;
+              display: flex;
+              border-radius: 50%;
+              align-items: center;
+              justify-content: center;
+              box-shadow: 0 0 12px rgba(0, 0, 0, 0.35);
+              text-decoration: none;
+              z-index: 9999;
+          }
+
+          .whats-icon {
+              width: 48px;
+              height: 48px;
+          }
 
 .product-img{
     width: 45%;
