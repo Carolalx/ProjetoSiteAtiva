@@ -614,3 +614,77 @@ img {
     width: 200px;
     height: auto;
 }
+
+/* Container do dropdown */
+/* Pai do dropdown precisa ser relativo */
+nav ul li.dropdown {
+    position: relative; /* muito importante! */
+}
+
+/* Menu suspenso */
+nav ul li.dropdown .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;  /* logo abaixo do link */
+    left: 0;    /* alinha à esquerda do li pai */
+    background-color: #0f0f1e;
+    padding: 10px 0;
+    min-width: 200px;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+/* Mostrar menu no hover */
+nav ul li.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Itens do menu */
+nav ul li.dropdown .dropdown-menu li {
+    padding: 8px 20px;
+}
+
+nav ul li.dropdown .dropdown-menu li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav ul li.dropdown .dropdown-menu li a:hover {
+    background-color: #1a1a2e;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%; /* logo abaixo do link "Produtos" */
+    left: 0;
+    background-color: #0f0f1e;
+    padding: 10px 0;
+    min-width: 200px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    z-index: 1000;
+}
+
+.dropdown-menu li {
+    padding: 8px 20px;
+}
+
+.dropdown-menu li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #1a1a2e;
+}
+
+/* Mostrar ao passar o mouse */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
