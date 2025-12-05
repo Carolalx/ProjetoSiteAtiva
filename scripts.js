@@ -106,5 +106,3 @@ document.addEventListener('click', function(e){
         menu.classList.remove('show');
     }
 });
-
-
