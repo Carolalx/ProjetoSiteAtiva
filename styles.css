@@ -9,7 +9,7 @@
 body {
     background-color: #0f0f1e;
     color: #fff;
-    font-size: 1rem;
+    font-size: 1.3rem;
     overflow: hidden;
 }
 
@@ -35,7 +35,7 @@ header {
 
 header nav ul {
     display:flex;
-    gap: 5%;
+    gap: 20%;
 }
 
 header nav li {
@@ -361,11 +361,12 @@ img {
 }
 
 /* Ajuste opcional: restringe largura do conteúdo para não ficar muito largo */
-main {
+.pagina-sobre main {
     width: 90%;
     max-width: 900px;
     margin: 0 auto;
 }
+
 
 .logo-sobre {
     margin-top: 8%; /* mude o valor como quiser */
@@ -394,6 +395,91 @@ main {
     text-decoration: none;
     font-weight: bold;
 }
+
+/* ========= RESPONSIVIDADE PARA CELULAR ========== */
+@media (max-width: 768px) {
+
+    body {
+        overflow: auto; /* permite rolagem no celular */
+    }
+
+    header {
+        width: 100%;
+        padding: 20px;
+    }
+
+    header nav ul {
+        gap: 10px; /* reduz espaço */
+    }
+
+    /* CONTAINER PRINCIPAL (index) */
+    .container {
+        height: auto;
+        padding-top: 120px; /* para não ficar atrás do header */
+    }
+
+    /* ITENS DO SLIDER – vira coluna */
+    .item {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+        height: auto;
+    }
+
+    .product-img {
+        width: 100%;
+        height: auto;
+    }
+
+    .product-img img {
+        max-width: 80%;
+        max-height: 300px;
+        transform: none !important;  /* remove animação lateral */
+    }
+
+    .content {
+        width: 100%;
+        padding: 0;
+        align-items: center;
+    }
+
+    .product-name {
+        font-size: 1.6rem;
+        transform: none !important;
+    }
+
+    .description {
+        font-size: 1rem;
+        max-width: 90%;
+        transform: none !important;
+    }
+
+    /* NAVEGAÇÃO DO SLIDER */
+    .arrows {
+        width: 100%;
+        top: 40%;
+    }
+
+    .numbers {
+        font-size: 2rem;
+    }
+
+    .dots .dot {
+        width: 20px;
+    }
+
+    /* BOLHAS DE FUNDO */
+    .tech-circle .circle {
+        opacity: 0.2;
+        transform: scale(0.5);
+    }
+
+}
+
+
+
+
+
 
 
 
