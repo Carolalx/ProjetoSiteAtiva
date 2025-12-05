@@ -91,3 +91,20 @@ function mostrar(secao) {
     // Mostra apenas o conteúdo clicado
     document.getElementById(secao).style.display = 'block';
 }
+
+const dropdown = document.querySelector('.dropdown > a');
+const menu = document.querySelector('.dropdown-menu');
+
+dropdown.addEventListener('click', function(e){
+    e.preventDefault(); // impede de ir para "#"
+    menu.classList.toggle('show');
+});
+
+// Fechar se clicar fora
+document.addEventListener('click', function(e){
+    if (!dropdown.contains(e.target)) {
+        menu.classList.remove('show');
+    }
+});
+
+
