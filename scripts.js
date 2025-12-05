@@ -81,3 +81,13 @@ function init() {
     console.warn('#next não encontrado no DOM.')
   }
 }
+
+function mostrar(secao) {
+    // Esconde todos os conteúdos
+    document.querySelectorAll('.secao').forEach(div => {
+        div.style.display = 'none';
+    });
+
+    // Mostra apenas o conteúdo clicado
+    document.getElementById(secao).style.display = 'block';
+}
