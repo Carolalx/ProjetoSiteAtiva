@@ -44,6 +44,11 @@ header nav li {
     padding: 5% 0;
 }
 
+header nav li a {
+    color: #fff;
+}
+
+
 header nav li::after {
     content: '';
     position: absolute;
@@ -561,3 +566,4 @@ img {
         height: 38px;
     }
 }
+
