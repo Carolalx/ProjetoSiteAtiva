@@ -1,115 +1,616 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: "Montserrat", sans-serif;
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+body {
+    background-color: #0f0f1e;
+    color: #fff;
+    font-size: 1.3rem;
+    overflow: auto;
+}
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap"
-        rel="stylesheet">
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 3;
+}
 
-    <link rel="stylesheet" href="styles.css">
+.logo {
+    font-family: "Orbitron", sans-serif;
+    font-size: 2rem;
+    font-weight: 900;
+    color: #00f7ff;
+    text-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
+}
 
-    <title>Ativa Filtros LTDA</title>
-
-    <!-- Melhor prática: carregar JS com defer -->
-    <script src="./scripts.js" defer></script>
-
-</head>
-
-<body>
-
-    <header>
-        <div class="logo">Ativa Filtros</div>
-
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
-                <li><a href="sobre.html#produtos">Produtos</a></li>
-                <li><a href="sobre.html#mercado">Mercado</a></li>
-                <li><a href="sobre.html#contatos">Contatos</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main class="container">
-
-        <div class="tech-circle">
-            <div class="circle"></div>
-            <div class="circle"></div>
-            <div class="circle"></div>
-            <div class="circle"></div>
-        </div>
-
-        <div class="list">
-            <div class="item active">
-                <div class="product-img">
-                    <img src="./img/carcFilInox304316.png">
-                </div>
-                <div class="content">
-                    <p class="product-tag">Filtros de processos</p>
-                    <p class="product-name">CARCAÇAS DE FILTROS EM AÇO INOX 304 OU 316</p>
-                    <p class="description">Carcaças completas para filtros cartucho e tipo BAG em aço inox.</p>
-                    <button class="btn">Saiba Mais</button>
-                </div>
-            </div>
-
-            <div class="item">
-                <div class="product-img">
-                    <img src="./img/elFilCart.png">
-                </div>
-                <div class="content">
-                    <p class="product-tag">Filtros de processos</p>
-                    <p class="product-name">Elementos filtrantes tipo cartucho</p>
-                    <p class="description">
-                        Elementos diversos em todos dimensionais e alturas, carvão ativado, polipropileno, microbiológicos, resinados, inox etc.
-                    </p>
-                    <button class="btn">Saiba Mais</button>
-                </div>
-            </div>
-
-            <div class="item">
-                <div class="product-img">
-                    <img src="./img/bagBolsa.png">
-                </div>
-                <div class="content">
-                    <p class="product-tag">Filtros de processos</p>
-                    <p class="product-name">Filtros Bag Bolsa</p>
-                    <p class="description">
-                        Elementos em nylon, polipropileno e poliéster em todos os tamanhos e grau de filtragem.
-                    </p>
-                    <button class="btn">Saiba Mais</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="arrows">
-            <button class="arrow-btn" id="prev">◀</button>
-            <button class="arrow-btn" id="next">▶</button>
-        </div>
-
-        <div class="indicators">
-            <div class="numbers">01</div>
-            <div class="dots">
-                <div class="dot active"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-            </div>
-        </div>
-
-    </main>
-
-  <div class="whats-float">  
-  <a href="https://wa.me/5541987082010?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es.">
-    <i class="fa-brands fa-whatsapp"></i> 
-    <img src="./img/icnwhats.png">
-  </a>
-  </div>
-</body>
-</html>
+header nav ul {
+    display: flex;
+    gap: 30px; /* ou 2rem, um valor fixo seguro */
+    justify-content: flex-end; /* alinha à direita */
+}
 
 
+
+header nav li {
+    cursor: pointer;
+    position: relative;
+    padding: 5% 0;
+}
+
+header nav li a {
+    color: #fff;
+}
+
+
+header nav li::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #00f7ff;
+    transition: width 0.5s;
+}
+
+header nav li:hover:after {
+    width: 100%;
+}
+
+.container {
+    height: 100vh;
+    position: relative;
+    background: linear-gradient(135deg, #0f0f1e 0%, #1f1f3a 100%);
+    overflow: hidden;
+}
+
+.container::before {
+    content: '';
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 247, 255, 0.2) 0%, rgba(15, 15, 30, 0) 70%);
+
+    /*maneira de centralizar 100%*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    filter: blur(50px);
+    z-index: 1;
+    animation: pulse 3s infinite alternate;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.5;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(2);        
+    }    
+}
+
+.list {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.item{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+
+    /* ANIMAÇÃO */
+    transform: translateX(100vw);
+    transition: transform 0.7s ease-in-out, opacity 0.7s ease-in-out;
+}
+
+.active{
+    opacity: 1;
+    transform: translateX(0);
+}
+  
+/* ESITLO ICONE WHATS */
+.whats-float {
+              position: fixed;
+              bottom: 20px;
+              right: 20px;
+              width: 65px;
+              height: 65px;
+              display: flex;
+              border-radius: 50%;
+              align-items: center;
+              justify-content: center;
+              box-shadow: 0 0 12px rgba(0, 0, 0, 0.35);
+              text-decoration: none;
+              z-index: 9999;
+          }
+
+          .whats-icon {
+              width: 48px;
+              height: 48px;
+          }
+
+.product-img{
+    width: 45%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+.product-img img {
+    max-width: 800%;
+    max-height: 90%;
+    filter: drop-shadow(0 0 30px rgba(0, 247, 255, 0.3));
+
+    /* ANIMAÇÃO */
+    transform: translateX(200px);
+    opacity: 0;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    transition-delay: 0.5s;
+}
+
+.active .product-img img {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.content {
+    width: 55%;
+    padding-right: 80px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    z-index: 2;
+    flex-direction: column;
+}
+
+.product-tag {
+    font-size: 1rem;
+    text-transform:uppercase;
+    color: #00f7ff;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.product-name {
+    font-size: 2.5rem;
+    font-family: "Orbitron", sans-serif;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    /* ANIMAÇÃO */
+    transform: translateX(400px);
+    opacity: 0;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    transition-delay: 0.5s;
+}
+
+.active .product-name {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+
+.description {
+    font-size: 1.1rem;
+    color: #b8b8d0;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    max-width: 600px;
+    /* ANIMAÇÃO */
+    transform: translateX(400px);
+    opacity: 0;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    transition-delay: 0.5s;
+}
+
+.active .description {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+
+.btn {
+    padding: 12px 16px;
+    background: linear-gradient(90deg, #00f7ff, #0066ff);
+    border-radius: 30px;
+    color: #000;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    border:none;
+}
+
+.btn:hover {
+    background-color: rgba(0, 247, 255, 0.2);
+    border-color: #00f7ff;    
+}
+
+.arrows {
+    position: absolute;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+
+.arrow-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(0, 247, 255, 0.3);
+}
+
+.arrow-btn:hover {
+    background-color: rgba(0, 247, 255, 0.2);
+    border-color: #00f7ff;    
+}
+
+.indicators {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    z-index: 5;
+}
+
+.numbers {
+    font-family: "Orbitron", sans-serif;    
+    font-size: 3rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.dots{
+    display: flex;
+    gap: 10px;
+}
+
+.dot{
+    width: 40%;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 2%;    
+}
+
+.dot.active{
+    background-color: #00f7ff;
+    box-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
+}
+
+.tech-circle{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 247, 255, 0.2);
+}
+
+.circle:nth-child(1){
+    width: 200px;
+    height: 200px;
+    top: 10%;
+    left: 10%;
+}
+
+.circle:nth-child(2){
+    width: 300px;
+    height: 300px;
+    top: 60%;
+    left: 80%;
+}
+
+.circle:nth-child(3){
+    width: 150px;
+    height: 150px;
+    top: 70%;
+    left: 20%;
+}
+
+.circle:nth-child(4){
+    width: 120px;
+    height: 120px;
+    top: 20%;
+    left: 70%;
+}
+
+/* ===== ESPAÇAMENTOS GERAIS ===== */
+
+/* Define espaçamento padrão entre seções */
+main > * {
+    margin-top: 5%;
+}
+
+/* Títulos */
+h1 {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+h2 {
+
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+h3 {
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: center;
+    white-space: pre-line;
+}
+
+/* Parágrafos */
+p {
+    margin-top: 10px;
+    margin-bottom: 70px;
+    line-height: 1.5;
+    white-space: pre-line; /* Mantém quebras de linha que você usou no texto */
+}
+
+/* Imagens */
+img {
+    display: block;
+    margin: 25px auto;  /* afasta e centraliza */
+    max-width: 100%;
+}
+
+/* Ajuste opcional: restringe largura do conteúdo para não ficar muito largo */
+.pagina-sobre main {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+
+.logo-sobre {
+    margin-top: 8%; /* mude o valor como quiser */
+}
+
+.pagina-sobre {
+    overflow-y: auto !important;
+    height: auto !important;
+    position: static !important;
+}
+
+.linha-centralizada {
+  width: 90%;
+  height: 2px;
+  background-color: #ccc;
+  margin: 10px auto; /* centraliza automaticamente */
+}
+
+/* Deixa o menu no canto superior direito APENAS na página sobre */
+.pagina-sobre header nav ul {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.pagina-sobre header nav ul li {
+    list-style: none;
+}
+
+.pagina-sobre header nav ul li a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ============================================================
+   RESPONSIVIDADE FLUIDA UNIVERSAL (serve para PC e celular)
+   ============================================================ */
+
+/* Fontes fluidas */
+.product-name {
+    font-size: clamp(1.4rem, 3vw, 2.8rem);
+}
+
+.description {
+    font-size: clamp(0.9rem, 1.8vw, 1.2rem);
+}
+
+.product-tag {
+    font-size: clamp(0.7rem, 1.2vw, 1rem);
+}
+
+.btn {
+    font-size: clamp(0.7rem, 1.4vw, 1rem);
+    padding: clamp(8px, 1vw, 14px) clamp(12px, 2vw, 20px);
+}
+
+/* Imagens fluem corretamente */
+.product-img img {
+    max-width: clamp(200px, 40vw, 480px);
+    max-height: clamp(200px, 45vh, 450px);
+    object-fit: contain;
+}
+
+/* Espaçamento geral do item */
+.item {
+    gap: clamp(20px, 5vw, 80px);
+}
+
+/* Arrows */
+.arrow-btn {
+    width: clamp(35px, 6vw, 60px);
+    height: clamp(35px, 6vw, 60px);
+}
+
+.numbers {
+    font-size: clamp(1.4rem, 4vw, 3rem);
+}
+
+.dot {
+    width: clamp(20px, 3vw, 40px);
+}
+
+/* ============================================================
+   AJUSTES RESPONSIVOS POR QUEBRA DE TELA
+   ============================================================ */
+
+/* ===== Telas até 1100px (tablet/laptop) ===== */
+@media (max-width: 1100px) {
+
+    header {
+        padding: 20px 30px;
+        width: 100%;
+    }
+
+    header nav ul {
+        gap: 30px;
+    }
+
+    .item {
+        padding: 20px;
+    }
+
+    .product-img {
+        width: 45%;
+    }
+
+    .content {
+        width: 55%;
+        padding-right: 20px;
+    }
+}
+
+
+/* ===== Telas até 768px (celular padrão) ===== */
+@media (max-width: 768px) {
+
+    body {
+        overflow-y: auto;
+        font-size: 0.9rem;
+    }
+
+    header {
+        padding: 15px 20px;
+    }
+
+    header nav ul {
+        gap: 12px;
+    }
+
+    /* Coluna em vez de lado a lado */
+    .item {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+    }
+
+    .product-img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .content {
+        width: 100%;
+        padding: 0;
+        align-items: center;
+    }
+
+    /* Remove animações exageradas no mobile */
+    .product-name,
+    .description,
+    .product-img img {
+        transform: none !important;
+    }
+
+    /* Arrows descem */
+    .arrows {
+        top: auto;
+        bottom: 120px;
+        width: 100%;
+    }
+
+    /* Indicadores sobem */
+    .indicators {
+        bottom: 40px;
+    }
+
+    /* Bolhas de fundo menores */
+    .tech-circle .circle {
+        transform: scale(0.5);
+        opacity: 0.15;
+    }
+}
+
+
+/* ===== Telas até 480px (celulares pequenos) ===== */
+@media (max-width: 480px) {
+
+    header nav ul {
+        gap: 8px;
+    }
+
+    .logo {
+        font-size: 1.4rem;
+    }
+
+    .product-name {
+        font-size: 1.4rem;
+    }
+
+    .description {
+        font-size: 0.9rem;
+    }
+
+    .arrow-btn {
+        width: 38px;
+        height: 38px;
+    }
+}
+
+.box {
+    display: flex;
+    align-items: center; /* centraliza verticalmente */
+    gap: 15px; /* espaço entre imagem e texto */
+}
+
+.box img {
+    width: 200px;
+    height: auto;
+}
