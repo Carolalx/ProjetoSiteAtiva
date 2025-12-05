@@ -9,7 +9,7 @@
 body {
     background-color: #0f0f1e;
     color: #fff;
-    font-size: 16px;
+    font-size: 1.3rem;
     overflow: hidden;
 }
 
@@ -27,7 +27,7 @@ header {
 
 .logo {
     font-family: "Orbitron", sans-serif;
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 900;
     color: #00f7ff;
     text-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
@@ -167,7 +167,7 @@ header nav li:hover:after {
 }
 
 .product-name {
-    font-size: 4rem;
+    font-size: 2.5rem;
     font-family: "Orbitron", sans-serif;
     line-height: 1.1;
     margin-bottom: 20px;
@@ -321,6 +321,60 @@ header nav li:hover:after {
     height: 120px;
     top: 20%;
     left: 70%;
+}
+
+/* ===== ESPAÇAMENTOS GERAIS ===== */
+
+/* Define espaçamento padrão entre seções */
+main > * {
+    margin-top: 5%;
+}
+
+/* Títulos */
+h1 {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Parágrafos */
+p {
+    margin-bottom: 5%;
+    line-height: 1.5;
+    white-space: pre-line; /* Mantém quebras de linha que você usou no texto */
+}
+
+/* Imagens */
+img {
+    display: block;
+    margin: 25px auto;  /* afasta e centraliza */
+    max-width: 100%;
+}
+
+/* Ajuste opcional: restringe largura do conteúdo para não ficar muito largo */
+main {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.logo-sobre {
+    margin-top: 8%; /* mude o valor como quiser */
+}
+
+.pagina-sobre {
+    overflow-y: auto !important;
+    height: auto !important;
+    position: static !important;
 }
 
 
