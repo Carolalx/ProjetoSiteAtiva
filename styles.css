@@ -356,7 +356,7 @@ header nav li:hover:after {
 
 /* Define espaçamento padrão entre seções */
 main > * {
-    margin-top: 5%;
+    margin-top: 40px;
 }
 
 /* Títulos */
@@ -402,6 +402,16 @@ img {
     margin: 0 auto;
 }
 
+/* Correção apenas para a página Sobre */
+.pagina-sobre .container {
+    height: auto !important;
+    min-height: auto !important;
+    overflow: visible !important;
+}
+
+.pagina-sobre .container::before {
+    display: none !important;
+}
 
 .logo-sobre {
     margin-top: 8%; /* mude o valor como quiser */
@@ -437,6 +447,13 @@ img {
 .pagina-sobre header nav ul li a {
     text-decoration: none;
     font-weight: bold;
+}
+/* Footer */
+footer {
+  text-align: center;
+  color: #00f7ff;
+  font-size: 14px;
+  opacity: 0.95;
 }
 
 /* ============================================================
@@ -688,4 +705,3 @@ nav ul li.dropdown .dropdown-menu li a:hover {
 .dropdown:hover .dropdown-menu {
     display: block;
 }
-
