@@ -1,160 +1,211 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="styles.css">  
+    <link rel="stylesheet" href="styles.css">
 
-  <title>Sobre Nós - Ativa Filtros</title>
- 
+    <title>Sobre Nós - Ativa Filtros</title>
 </head>
+
 <body class="pagina-sobre">
-  <header>
+
+    <!-- HEADER -->
+    <header>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="sobre.html">Sobre</a></li>
                 <li class="dropdown">
-                <a href="sobre.html#Produtos">Produtos</a>
-                <ul class="dropdown-menu">
-                    <li><a href="sobre.html#FiltrosProcessos">Filtro de Processos</a></li>
-                    <li><a href="sobre.html#FiltrosHidraulicos">Filtros Hidráulicos</a></li>
-                    <li><a href="sobre.html#FiltrosArComprimido">Filtros para Ar Comprimido</a></li>
-                    <li><a href="sobre.html#ComponentesPneumaticos">Componentes Pneumáticos</a></li>
-                    <li><a href="sobre.html#FiltrosAr">Filtro de Ar</a></li>
-                    <li><a href="sobre.html#FiltrosTipoPapel">Filtros Tipo Papel</a></li>
-                    <li><a href="sobre.html#MantasFiltrantes">Mantas Filtrantes</a></li>                                    
-                </ul>
+                    <a href="#produtos">Produtos</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#FiltrosProcessos">Filtro de Processos</a></li>
+                        <li><a href="#FiltrosHidraulicos">Filtros Hidráulicos</a></li>
+                        <li><a href="#FiltrosArComprimido">Filtros para Ar Comprimido</a></li>
+                        <li><a href="#ComponentesPneumaticos">Componentes Pneumáticos</a></li>
+                        <li><a href="#FiltrosAr">Filtro de Ar</a></li>
+                        <li><a href="#FiltrosTipoPapel">Filtros Tipo Papel</a></li>
+                        <li><a href="#MantasFiltrantes">Mantas Filtrantes</a></li>
+                    </ul>
                 </li>
-
-                    <li><a href="sobre.html#mercado">Mercado</a></li>
-                    <li><a href="sobre.html#contatos">Contatos</a></li>
+                <li><a href="#mercado">Mercado</a></li>
+                <li><a href="#contatos">Contatos</a></li>
             </ul>
-
         </nav>
-  </header>
+    </header>
 
-  <main>
-    <div class="logo-sobre"></div>
-    <img src="./img/logom.png">
+    <main>
 
-    <h1>SOBRE NÓS</h1>
-            <p> ATIVA tem sempre a melhor solução para cada aplicação específica no o seu processo , prezando na qualidade do atendimento e flexibilidade de negociação.​                
-            <h4>MISSÃO:</h4> Oferecer soluções em filtração e componentes pneumaticos de forma técnica, eficaz e responsável!
+        <!-- LOGO -->
+        <section class="logo-section">
+            <div class="logo-sobre"></div>
+            <img src="./img/logom.png" alt="Logo Ativa Filtros">
+        </section>
 
-            <h4>VISÃO:</h4> Estar entre as principais empresas do mercado que atuamos, prestando serviços de qualidade, diferenciado e confiável!
+        <!-- SOBRE -->
+        <section class="sobre-nos">
+            <h1>SOBRE NÓS</h1>
+            <p>
+                ATIVA tem sempre a melhor solução para cada aplicação específica no seu processo,
+                prezando na qualidade do atendimento e flexibilidade de negociação.
+            </p>
 
-            <h4>VALORES:</h4>Atender cada exigência do mercado que atuamos, inovando e capacitando profissionais, para garantir a satisfação de quem nos oferece oportunidades! </p>
+            <h4>MISSÃO:</h4>
+            <p>Oferecer soluções em filtração e componentes pneumáticos de forma técnica, eficaz e responsável!</p>
 
-    <div class="linha-centralizada"></div>
+            <h4>VISÃO:</h4>
+            <p>Estar entre as principais empresas do mercado que atuamos, prestando serviços de qualidade, diferenciados e confiáveis!</p>
 
-    <h1 id ="produtos">PRODUTOS</h1>
-            <!-- FILTROS DE PROCESSOS-->
-    <h1 id ="FiltrosProcessos">Filtros de Processos</h1> 
-            <h3>CARCAÇAS DE FILTRO EM AÇO INOX 304 OU 316
-              CARCAÇAS EM POLIPROPILENO</h3>
-            <div class="box">
-                <img src="./img/carcFilInox304316.png" alt="">
-                <p>Carcaças completas para filtros cartucho e tipo BAG em aço inox.</p>
-            </div>
+            <h4>VALORES:</h4>
+            <p>Atender cada exigência do mercado que atuamos, inovando e capacitando profissionais para garantir a satisfação dos nossos clientes!</p>
+        </section>
 
-            
-            <h3>ELEMENTOS FILTRANTES TIPO CARTUCHO</h3>    
-            <div class="box">
-                <img src="./img/elFilCart.png">
-                <p>Elementos diversos em todos dimencionais e alturas, carvão ativado, polipropileno, elementos microbiológicos, resinados, aço inox entre outros.</p>             
-              </div>
+        <div class="linha-centralizada"></div>
 
-            <h3>FILTROS BAG OU BOLSA</h3>
-            <div class="box">
-              <img src="./img/bagBolsa.png"> 
-              <p>Elementos em nylon, polipropileno e poliéster em todos os tamanhos e grau de filtragem.</p>                    
-            </div>
+        <!-- PRODUTOS -->
+        <section id="produtos">
+            <h1>PRODUTOS</h1>
 
-    <div class="linha-centralizada"></div>        
-            <!-- FILTROS HIDRÁULICOS-->
-    <h1 id ="FiltrosHidraulicos">Filtros Hidráulicos</h1>
-            <img src="./img/filtHidr.png">
-            <p>Elementos para alta pressão e filtros de tanque, retorno e respiro.</p>  
+            <!-- FILTROS DE PROCESSOS -->
+            <article id="FiltrosProcessos">
+                <h2>Filtros de Processos</h2>
 
-    <div class="linha-centralizada"></div>             
-            <!-- FILTROS PARA AR COMPRIMIDO-->
-    <h1 id ="FiltrosArComprimido">Filtros Para Ar Comprimido</h1>
-            <p>Elementos diversos, filtros completos, purgatórios e secadores.</p>    
-            <div class="box">
-              <img src="./img/filArComp.png">
-            </div>
-            <h3>ELEMENTOS COALESCENTES</h3>
-            <img src="./img/elCoal.png">        
-            <h3>SECADOR DE ADSORÇÃO.</H3>
-            <img src="./img/secAds.png">        
-            <h3>PURGADORES E VÁLVULAS SOLENÓIDES.</H3>            
-            <img src="./img/purgValvSol.png">
-    <div class="linha-centralizada"></div>
-  
-    <!-- COMPONENTES PNEUMÁTICOS-->
-    <h1 id="ComponentesPneumaticos">Componentes Pneumáticos</h1>
-            <p>Conexões, válvulas, cilindros, tubos e acessórios.</p>
+                <h3>CARCAÇAS DE FILTRO EM AÇO INOX 304 OU 316 / CARCAÇAS EM POLIPROPILENO</h3>
+                <div class="box">
+                    <img src="./img/carcFilInox304316.png" alt="Carcaças de Filtro">
+                    <p>Carcaças completas para filtros cartucho e tipo BAG em aço inox.</p>
+                </div>
 
-            <h3>CILÍNDRO PNEUMÁTICO</h3>
-            <div class="box">
-              <img src="./img/cilPneum.png">
-            </div>
-            <h3>CONJUNTO LUBRIFIL</h3>
-            <img src="./img/cLubrifil.png">        
-            <h3>CILINDRO MINI ISO</H3>
-            <img src="./img/cilMiniIso.png">        
-            <h3>VÁLVULA ROTATIVA</H3>            
-            <img src="./img/valvRotativa.png">
-    <div class="linha-centralizada"></div> 
- 
-    <!-- FILTROS DE AR-->
-    <h1 id="FiltrosAr">Filtros de Ar</h1>
-            <h3>Tipo Cartucho</h3>
-            <img src="./img/aguardando.png">
-            <p>Elementos em celulose, poliéster em diversos graus de filtração.</p>
-            </div>
-            <h3>FILTRO TIPO PAINEL</h3>
-            <img src="./img/aguardando.png">
-            <p>Filtros em todos os graus de filtração e medidas específicas para quaisquer aplicações.</p>        
-            <h3>MANTAS FILTRANTES</H3>
-            <img src="./img/aguardando.png"> 
-            <p>Mantras filtrantes nas classes G1,G2, G3, G4, F1, F2...</p>       
-    <div class="linha-centralizada"></div>
+                <h3>ELEMENTOS FILTRANTES TIPO CARTUCHO</h3>
+                <div class="box">
+                    <img src="./img/elFilCart.png" alt="Elementos Filtrantes">
+                    <p>Elementos diversos em todos dimensionais e alturas: carvão ativado, polipropileno, microbiológicos, resinados, aço inox entre outros.</p>
+                </div>
 
-     <!-- MERCADO-->
-    <h1 id ="mercado">Mercado de Atuação</h1>
+                <h3>FILTROS BAG OU BOLSA</h3>
+                <div class="box">
+                    <img src="./img/bagBolsa.png" alt="Filtros Bag">
+                    <p>Elementos em nylon, polipropileno e poliéster em todos os tamanhos e graus de filtragem.</p>
+                </div>
+            </article>
 
-            <p>- Alimentos e bebidas
-            - Farmacêutico e veterinário
-            - Indústria Química
-            - Indústria Petroquímica
-            - Filtros para equipamentos
-            - Indústria cosmética
-            - Indústria de Transformação</p>
+            <div class="linha-centralizada"></div>
 
-    <!-- CONTATOS-->
-    <h1 id ="contatos">Contatos</h1>
+            <!-- HIDRÁULICOS -->
+            <article id="FiltrosHidraulicos">
+                <h2>Filtros Hidráulicos</h2>
+                <img src="./img/filtHidr.png" alt="Filtros Hidráulicos">
+                <p>Elementos para alta pressão, filtros de tanque, retorno e respiro.</p>
+            </article>
 
-          <p>Endereço: R. Goiabeira 99, Loja 01  Centro Novo (Eucaliptos), Fazenda Rio Grande PR 83820-527 - BR
-              (41) 98708-2010 || (41) 3534-8777
-              vendas@ativafiltros.com.br    ||  lineu@ativafiltros.com.br </p>        
-        
-                  
-      
-  </main>
-  <div class="whats-float">  
-  <a href="https://wa.me/5541987082010?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es.">
-    <i class="fa-brands fa-whatsapp"></i> 
-    <img src="./img/icnwhats.png">
-  </a>
-  </div>
+            <div class="linha-centralizada"></div>
+
+            <!-- AR COMPRIMIDO -->
+            <article id="FiltrosArComprimido">
+                <h2>Filtros para Ar Comprimido</h2>
+                <p>Elementos diversos, filtros completos, purgadores e secadores.</p>
+
+                <div class="box">
+                    <img src="./img/filArComp.png" alt="Filtros Ar Comprimido">
+                </div>
+
+                <h3>ELEMENTOS COALESCENTES</h3>
+                <img src="./img/elCoal.png" alt="Elementos Coalescentes">
+
+                <h3>SECADOR DE ADSORÇÃO</h3>
+                <img src="./img/secAds.png" alt="Secador de Adsorção">
+
+                <h3>PURGADORES E VÁLVULAS SOLENÓIDES</h3>
+                <img src="./img/purgValvSol.png" alt="Purgadores e Válvulas Solenóides">
+            </article>
+
+            <div class="linha-centralizada"></div>
+
+            <!-- PNEUMÁTICOS -->
+            <article id="ComponentesPneumaticos">
+                <h2>Componentes Pneumáticos</h2>
+                <p>Conexões, válvulas, cilindros, tubos e acessórios.</p>
+
+                <h3>CILÍNDRO PNEUMÁTICO</h3>
+                <div class="box">
+                    <img src="./img/cilPneum.png" alt="Cilindro Pneumático">
+                </div>
+
+                <h3>CONJUNTO LUBRIFIL</h3>
+                <img src="./img/cLubrifil.png" alt="Conjunto Lubrifil">
+
+                <h3>CILINDRO MINI ISO</h3>
+                <img src="./img/cilMiniIso.png" alt="Cilindro Mini ISO">
+
+                <h3>VÁLVULA ROTATIVA</h3>
+                <img src="./img/valvRotativa.png" alt="Válvula Rotativa">
+            </article>
+
+            <div class="linha-centralizada"></div>
+
+            <!-- FILTROS DE AR -->
+            <article id="FiltrosAr">
+                <h2>Filtros de Ar</h2>
+
+                <h3>Tipo Cartucho</h3>
+                <img src="./img/aguardando.png" alt="Filtro Tipo Cartucho">
+                <p>Elementos em celulose e poliéster em diversos graus de filtração.</p>
+
+                <h3>Filtro Tipo Painel</h3>
+                <img src="./img/aguardando.png" alt="Filtro Tipo Painel">
+                <p>Filtros em todos os graus de filtração e medidas específicas para diversas aplicações.</p>
+
+                <h3>Mantas Filtrantes</h3>
+                <img src="./img/aguardando.png" alt="Mantas Filtrantes">
+                <p>Mantas filtrantes nas classes G1, G2, G3, G4, F1, F2...</p>
+            </article>
+        </section>
+
+        <div class="linha-centralizada"></div>
+
+        <!-- MERCADO -->
+        <section id="mercado">
+            <h2>Mercado de Atuação</h2>
+            <p>
+                - Alimentos e bebidas<br>
+                - Farmacêutico e veterinário<br>
+                - Indústria Química<br>
+                - Indústria Petroquímica<br>
+                - Filtros para equipamentos<br>
+                - Indústria cosmética<br>
+                - Indústria de Transformação
+            </p>
+        </section>
+
+        <!-- CONTATOS -->
+        <section id="contatos">
+            <h2>Contatos</h2>
+            <p>
+                Endereço: R. Goiabeira 99, Loja 01, Centro Novo (Eucaliptos),  
+                Fazenda Rio Grande - PR - 83820-527<br><br>
+                (41) 98708-2010 &nbsp; | &nbsp; (41) 3534-8777<br>
+                vendas@ativafiltros.com.br &nbsp; | &nbsp; lineu@ativafiltros.com.br
+            </p>
+        </section>
+
+        <footer class="container" style="max-width:980px">
+                Developed by Carol A.
+        </footer>
+
+    </main>
+
+    <!-- WHATSAPP FLOAT -->
+    <div class="whats-float">
+        <a href="https://wa.me/5541987082010?text=Olá! Vim pelo site">
+            <img src="./img/icnwhats.png" alt="WhatsApp">
+        </a>
+    </div>
 </body>
 </html>
