@@ -45,7 +45,6 @@
                     <li><a href="sobre.html#mercado">Mercado</a></li>
                     <li><a href="sobre.html#contatos">Contatos</a></li>
             </ul>
-
         </nav>
     </header>
 
@@ -215,5 +214,68 @@
     <img src="./img/icnwhats.png">
   </a>
   </div>
+  <!-- ================= DECORAÇÃO DE NATAL ================= -->
+
+<!-- Mensagem de Natal separada -->
+<div class="mensagem-natal">
+  🎄 <strong>Desejamos um Feliz Natal!</strong> 🎄
+</div>
+
+<!-- Touca de Papai Noel na logo -->
+<img class="touca-logo" src="https://i.imgur.com/RG2b2bM.png" alt="Touca de Natal">
+
+<!-- Papai Noel dentro da bolha esquerda -->
+<img class="papai-bolha" src="./img/natal.png" alt="Papai Noel Sorrindo">
+
+<style>
+/* ================== MENSAGEM NATAL ================== */
+.mensagem-natal {
+    position: fixed;
+    top: 90px;
+    right: 25px;
+    background: rgba(255, 0, 0, 0.55);
+    padding: 15px 25px;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 700;
+    z-index: 9999;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 0 10px rgba(255, 0, 0, .7);
+}
+
+/* ================== TOUCA NA LOGO ================== */
+/*.touca-logo {
+    position: fixed;
+    top: 6px;       
+    left: 75px; 
+    width: 70px;
+    z-index: 9999;
+    pointer-events: none;
+    transform: rotate(-18deg);
+}*/
+
+
+/* ================== PAPAI NOEL NA BOLHA ================== */
+.papai-bolha {
+    position: absolute;
+    top: 14%;               /* coincide com circle:nth-child(1) */
+    left: 11%;
+    width: 160px;           /* ajuste de tamanho */
+    z-index: 3;
+    pointer-events: none;
+    animation: piscar 2.5s infinite;
+}
+
+/* Animação de piscar */
+@keyframes piscar {
+    0%, 10%, 100% { filter: brightness(1); }
+    5% { filter: brightness(0.4); }
+}
+</style>
+
+<!-- ================= FIM DECORAÇÃO DE NATAL ================= -->
+
+
 </body>
 </html>
