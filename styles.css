@@ -136,14 +136,6 @@ nav ul li.dropdown .dropdown-menu.show {
     display: block !important; /* Exibe quando a classe .show é adicionada */
 }
 
-/* Isso vai garantir que o menu não seja exibido no hover em telas pequenas */
-@media (max-width: 768px) {
-    nav ul li.dropdown:hover .dropdown-menu {
-        display: none !important; /* Garantir que o hover não abra no mobile */
-    }
-}
-
-
 .list {
     width: 80%;
     height: 100%;
