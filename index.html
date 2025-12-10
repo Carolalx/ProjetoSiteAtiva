@@ -26,8 +26,8 @@
 
     <header>
         <div class="logo">
-        <img src="./img/logoEner.png" alt="Símbolo" class="logo-icon">
-        ATIVA Filtros
+            ATIVA Filtros
+            <img src="./img/logoEner.png" alt="Símbolo" class="logo-icon">
         </div>
 
         <nav>
@@ -46,12 +46,12 @@
                         <li><a href="sobre.html#MantasFiltrantes">Mantas Filtrantes</a></li>
                     </ul>
                 </li>
-
                 <li><a href="sobre.html#mercado">Mercado</a></li>
                 <li><a href="sobre.html#contatos">Contatos</a></li>
             </ul>
         </nav>
     </header>
+
 
     <main class="container">
 
@@ -190,7 +190,8 @@
     </main>
 
     <div class="whats-float">
-        <a href="https://wa.me/5541987082010?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es.">
+        <a
+            href="https://wa.me/5541987082010?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es.">
             <img src="./img/icnwhats.png">
         </a>
     </div>
@@ -208,7 +209,7 @@
     <style>
         .mensagem-natal {
             position: fixed;
-            top: 90px;
+            top: 120px;
             right: 25px;
             background: rgba(255, 0, 0, 0.55);
             padding: 15px 25px;
@@ -223,7 +224,7 @@
 
         .papai-bolha {
             position: absolute;
-            top: 130px;
+            top: 140px;
             right: 25px;
             width: 110px;
             z-index: 3;
@@ -231,8 +232,16 @@
         }
 
         @keyframes piscar {
-            0%, 10%, 100% { filter: brightness(1); }
-            5% { filter: brightness(0.4); }
+
+            0%,
+            10%,
+            100% {
+                filter: brightness(1);
+            }
+
+            5% {
+                filter: brightness(0.4);
+            }
         }
 
         /* ================== NEVE (ADICIONADO) ================== */
@@ -242,73 +251,76 @@
             left: 0;
             width: 100%;
             height: 100%;
-            pointer-events: none; /* não interfere no site */
-            z-index: 1; /* atrás de tudo */
+            pointer-events: none;
+            /* não interfere no site */
+            z-index: 1;
+            /* atrás de tudo */
         }
+
         /* ========================================================= */
     </style>
 
     <!-- SCRIPT DO EFEITO DE NEVE (ADICIONADO) -->
     <script>
-    const canvas = document.getElementById("snow-canvas");
-    const ctx = canvas.getContext("2d");
+        const canvas = document.getElementById("snow-canvas");
+        const ctx = canvas.getContext("2d");
 
-    function resizeSnow() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-    }
-    resizeSnow();
-    window.addEventListener("resize", resizeSnow);
+        function resizeSnow() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeSnow();
+        window.addEventListener("resize", resizeSnow);
 
-    const maxFlakes = 70;
-    const flakes = [];
+        const maxFlakes = 70;
+        const flakes = [];
 
-    for (let i = 0; i < maxFlakes; i++) {
-        flakes.push({
-            x: Math.random() * canvas.width,
-            y: Math.random() * canvas.height,
-            r: Math.random() * 3 + 1,
-            d: Math.random() + 1
-        });
-    }
-
-    let angle = 0;
-
-    function drawSnow() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-        ctx.fillStyle = "white";
-        ctx.beginPath();
-
-        for (let f of flakes) {
-            ctx.moveTo(f.x, f.y);
-            ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
+        for (let i = 0; i < maxFlakes; i++) {
+            flakes.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                r: Math.random() * 3 + 1,
+                d: Math.random() + 1
+            });
         }
 
-        ctx.fill();
-        updateSnow();
-    }
+        let angle = 0;
 
-    function updateSnow() {
-        angle += 0.01;
+        function drawSnow() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        for (let f of flakes) {
-            f.y += Math.pow(f.d, 2) + 1;
-            f.x += Math.sin(angle) * 0.5;
+            ctx.fillStyle = "white";
+            ctx.beginPath();
 
-            if (f.y > canvas.height) {
-                f.y = -5;
-                f.x = Math.random() * canvas.width;
+            for (let f of flakes) {
+                ctx.moveTo(f.x, f.y);
+                ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
+            }
+
+            ctx.fill();
+            updateSnow();
+        }
+
+        function updateSnow() {
+            angle += 0.01;
+
+            for (let f of flakes) {
+                f.y += Math.pow(f.d, 2) + 1;
+                f.x += Math.sin(angle) * 0.5;
+
+                if (f.y > canvas.height) {
+                    f.y = -5;
+                    f.x = Math.random() * canvas.width;
+                }
             }
         }
-    }
 
-    function animateSnow() {
-        drawSnow();
-        requestAnimationFrame(animateSnow);
-    }
+        function animateSnow() {
+            drawSnow();
+            requestAnimationFrame(animateSnow);
+        }
 
-    animateSnow();
+        animateSnow();
     </script>
 
 </body>
