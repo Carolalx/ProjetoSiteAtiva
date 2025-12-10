@@ -42,7 +42,7 @@ header {
 /* Logo icon responsivo (ajuste para aumentar um pouco o tamanho) */
 .logo-icon {
     width: auto;                             /* Mantém a proporção da imagem */
-    max-height: clamp(1.5em, 6vw, 2em);       /* Aumenta o tamanho máximo do ícone */
+    max-height: clamp(1.5em, 6vw, 1.5em);       /* Aumenta o tamanho máximo do ícone */
     display: block;                           /* Garante o display correto */
 }
 
@@ -775,9 +775,71 @@ nav ul li.dropdown .dropdown-menu li a:hover {
 /* Mensagem de Natal responsiva abaixo da lista */
 .mensagem-natal {
     position: fixed;
-    top: calc(20px + 100%); /* 20px abaixo do topo do header */
+    top: calc(100px + 10vh); /* 100px abaixo do topo do header */
     right: clamp(5px, 3vw, 20px);
     font-size: clamp(0.65rem, 1.5vw, 0.9rem);
     padding: clamp(4px, 1vw, 10px) clamp(6px, 2vw, 15px);
     z-index: 5;
 }
+
+/* Ajuste da lista e logo em telas pequenas (até 768px) */
+@media (max-width: 768px) {
+
+    /* Colocar a lista abaixo da logo em telas pequenas */
+    header nav ul {
+        flex-direction: column;
+        gap: 15px; /* Ajusta o espaçamento entre os itens */
+    }
+
+    /* Garantir que a logo e ícone sejam responsivos e bem posicionados */
+    .logo {
+        font-size: 1.6rem;  /* Reduz um pouco o tamanho da logo em telas pequenas */
+    }
+
+    .logo-icon {
+        max-height: 1.5em;  /* Aumenta o ícone um pouco, mas ainda mantém proporção */
+    }
+
+    /* Ajustes para a mensagem de Natal e o Papai Noel */
+    .mensagem-natal {
+        top: calc(120px + 12vh); /* Ajuste de posição mais para baixo */
+        right: 10px;  /* Mantém a margem direita */
+    }
+
+    .papai-bolha {
+        top: calc(70px + 6vh); /* Ajusta a posição vertical */
+        right: 10px;  /* Ajusta a posição do lado direito */
+    }
+}
+
+/* ===== Telas até 480px (celulares pequenos) ===== */
+@media (max-width: 480px) {
+
+    /* Logo ainda mais compacta */
+    .logo {
+        font-size: 1.4rem;   /* Diminui mais o tamanho da logo */
+    }
+
+    .logo-icon {
+        max-height: 1.2em;    /* Tamanho de ícone ajustado */
+    }
+
+    /* Papai Noel e Mensagem de Natal em telas pequenas */
+    .papai-bolha {
+        top: 80px;            /* Ajuste o Papai Noel para não sobrepor elementos */
+        right: 5px;           /* Mais próximo da borda direita */
+    }
+
+    .mensagem-natal {
+        font-size: 0.75rem;   /* Ajuste o tamanho da fonte para telas menores */
+        top: calc(140px + 15vh); /* Mais para baixo, afastando da logo */
+        right: 10px;
+    }
+
+    /* Ajustes adicionais para outros elementos na tela */
+    header nav ul {
+        gap: 10px;
+    }
+}
+
+
