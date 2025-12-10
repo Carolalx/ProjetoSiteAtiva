@@ -470,10 +470,12 @@ img {
     list-style: none;
 }
 
+/* Página Sobre: manter sombreamento, mudar fonte */
 .pagina-sobre header nav ul li a {
-    text-decoration: none;
-    font-weight: bold;
+    font-family: "Montserrat", sans-serif; /* mesma do index */
+    text-shadow: 0 0 10px rgba(0, 247, 255, 0.5); /* mantém o sombreamento */
 }
+
 /* Footer */
 footer {
   text-align: center;
@@ -765,5 +767,3 @@ nav ul li.dropdown .dropdown-menu li a:hover {
         right: 10px;
     }
 }
-
-
