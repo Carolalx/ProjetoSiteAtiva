@@ -723,4 +723,38 @@ nav ul li.dropdown .dropdown-menu li a:hover {
     display: block;
 }
 
+/* ============================
+   RESPONSIVIDADE — PAPAI NOEL
+   ============================ */
+@media (max-width: 768px) {
+    .papai-bolha {
+        width: 80px;        /* diminui tamanho */
+        top: 18%;           /* baixa um pouco */
+        left: 5%;           /* gruda mais na esquerda */
+    }
+
+    .mensagem-natal {
+        font-size: 0.85rem;   /* texto menor */
+        padding: 10px 18px;   /* menos espaço */
+        top: 75px;            /* sobe um pouco */
+        right: 15px;
+    }
+}
+
+/* Telas bem pequenas (celulares pequenos) */
+@media (max-width: 480px) {
+    .papai-bolha {
+        width: 65px;
+        top: 20%;
+        left: 3%;
+    }
+
+    .mensagem-natal {
+        font-size: 0.75rem;
+        padding: 8px 15px;
+        top: 70px;
+        right: 10px;
+    }
+}
+
 
