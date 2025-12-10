@@ -26,11 +26,11 @@ header {
 }
 
 .logo {
-    font-family: "Orbitron", sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 2rem;
     font-weight: 900;
-    color: #00f7ff;
-    text-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
+    color: hwb(64 0% 0%);
+    text-shadow: 0 0 10px rgba(238, 255, 0, 0.952);
 }
 
 header nav ul {
@@ -767,3 +767,5 @@ nav ul li.dropdown .dropdown-menu li a:hover {
         right: 10px;
     }
 }
+
+
