@@ -168,7 +168,7 @@ header nav li:hover:after {
     transform: translateX(200px);
     opacity: 0;
     transition: transform 0.6s ease, opacity 0.6s ease;
-    transition-delay: 0.3s;
+    transition-delay: 0.5s;
 }
 
 .active .product-img img {
@@ -353,6 +353,23 @@ header nav li:hover:after {
 }
 
 /* ===== ESPAÇAMENTOS GERAIS ===== */
+
+/* Galeria das aplicações diversas */
+.imagens-apldiv {
+    display: flex;
+    gap: 20px;            /* espaço entre imagens */
+    flex-wrap: wrap;      /* permite quebrar em telas pequenas */
+    justify-content: center; /* centraliza as imagens */
+    margin-bottom: 40px;  /* espaçamento abaixo */
+}
+
+.imagens-apldiv img {
+    width: 220px;         /* ajuste como quiser */
+    height: auto;
+    margin: 0;            /* remove margin global do img */
+    display: block;
+}
+
 
 /* Define espaçamento padrão entre seções */
 main > * {
@@ -705,3 +722,5 @@ nav ul li.dropdown .dropdown-menu li a:hover {
 .dropdown:hover .dropdown-menu {
     display: block;
 }
+
+
