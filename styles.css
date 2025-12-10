@@ -489,16 +489,6 @@ img {
   margin: 10px auto; /* centraliza automaticamente */
 }
 
-/* Deixa o menu no canto superior direito APENAS na página sobre */
-.pagina-sobre header nav ul {
-    background: rgba(10, 10, 20, 0.85);  /* fundo da faixa */
-    backdrop-filter: blur(6px);          /* deixa moderno */    
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    display: flex;
-}
-
 .pagina-sobre header nav ul li {
     list-style: none;
 }
