@@ -654,7 +654,7 @@ footer {
 /* ===== Telas até 480px (celulares pequenos) ===== */
 @media (max-width: 480px) {
     header nav ul {
-        gap: 8px;
+        gap: 10px;
     }
 
     .logo {
@@ -664,6 +664,21 @@ footer {
     .logo-icon {
         max-height: 1.2em;    /* Tamanho de ícone ajustado */
     }
+
+    /* Papai Noel e Mensagem de Natal em telas pequenas */
+    .papai-bolha {
+        top: 70px;            /* Ajuste a posição vertical para não sobrepor elementos */
+        right: 5px;           /* Mais próximo da borda direita */
+        width: clamp(40px, 6vw, 60px);  /* Ajuste para diminuir mais o tamanho do Papai Noel */
+    }
+
+    .mensagem-natal {
+        font-size: 0.65rem;   /* Ajuste o tamanho da fonte para telas menores */
+        top: calc(130px + 15vh); /* Mais para baixo, afastando da logo */
+        right: 10px;
+        padding: clamp(3px, 0.8vw, 8px) clamp(5px, 1.5vw, 12px); /* Ajuste no padding para não ficar muito grande */
+    }
+
 
     .product-name {
         font-size: 1.4rem;
