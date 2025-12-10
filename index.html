@@ -15,12 +15,14 @@
 
     <title>Ativa Filtros LTDA</title>
 
-    <!-- Melhor prática: carregar JS com defer -->
     <script src="./scripts.js" defer></script>
-
 </head>
 
 <body>
+
+    <!-- ================== EFEITO DE NEVE (ADICIONADO) ================== -->
+    <canvas id="snow-canvas"></canvas>
+    <!-- ================================================================ -->
 
     <header>
         <div class="logo">Ativa Filtros</div>
@@ -30,20 +32,20 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="sobre.html">Sobre</a></li>
                 <li class="dropdown">
-                <a href="#">Produtos</a>
-                <ul class="dropdown-menu">
-                    <li><a href="sobre.html#FiltrosProcessos">Filtro de Processos</a></li>
-                    <li><a href="sobre.html#FiltrosHidraulicos">Filtros Hidráulicos</a></li>
-                    <li><a href="sobre.html#FiltrosArComprimido">Filtros para Ar Comprimido</a></li>
-                    <li><a href="sobre.html#ComponentesPneumaticos">Componentes Pneumáticos</a></li>
-                    <li><a href="sobre.html#FiltrosAr">Filtro de Ar</a></li>
-                    <li><a href="sobre.html#FiltrosTipoPapel">Filtros Tipo Papel</a></li>
-                    <li><a href="sobre.html#MantasFiltrantes">Mantas Filtrantes</a></li>                                    
-                </ul>
+                    <a href="#">Produtos</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="sobre.html#FiltrosProcessos">Filtro de Processos</a></li>
+                        <li><a href="sobre.html#FiltrosHidraulicos">Filtros Hidráulicos</a></li>
+                        <li><a href="sobre.html#FiltrosArComprimido">Filtros p/ Ar Comprimido</a></li>
+                        <li><a href="sobre.html#ComponentesPneumaticos">Componentes Pneumáticos</a></li>
+                        <li><a href="sobre.html#FiltrosAr">Filtro de Ar</a></li>
+                        <li><a href="sobre.html#FiltrosTipoPapel">Filtros Tipo Papel</a></li>
+                        <li><a href="sobre.html#MantasFiltrantes">Mantas Filtrantes</a></li>
+                    </ul>
                 </li>
 
-                    <li><a href="sobre.html#mercado">Mercado</a></li>
-                    <li><a href="sobre.html#contatos">Contatos</a></li>
+                <li><a href="sobre.html#mercado">Mercado</a></li>
+                <li><a href="sobre.html#contatos">Contatos</a></li>
             </ul>
         </nav>
     </header>
@@ -77,9 +79,7 @@
                 <div class="content">
                     <p class="product-tag">Filtros de processos</p>
                     <p class="product-name">Elementos filtrantes tipo cartucho</p>
-                    <p class="description">
-                        Elementos diversos em todos dimensionais e alturas, carvão ativado, polipropileno, microbiológicos, resinados, inox etc.
-                    </p>
+                    <p class="description">Elementos em várias medidas, PP, inox, carvão ativado etc.</p>
                     <button class="btn">Saiba Mais</button>
                 </div>
             </div>
@@ -91,9 +91,7 @@
                 <div class="content">
                     <p class="product-tag">Filtros de processos</p>
                     <p class="product-name">Filtros Bag Bolsa</p>
-                    <p class="description">
-                        Elementos em nylon, polipropileno e poliéster em todos os tamanhos e grau de filtragem.
-                    </p>
+                    <p class="description">Elementos em nylon, polipropileno e poliéster.</p>
                     <button class="btn">Saiba Mais</button>
                 </div>
             </div>
@@ -104,10 +102,7 @@
                 </div>
                 <div class="content">
                     <p class="product-tag">Filtros Hidráulicos</p>
-                    <p class="product-name"></p>
-                    <p class="description">
-                        Elementos para alta pressão e filtros de tanque, retorno e respiro.
-                    </p>
+                    <p class="description">Elementos para alta pressão, retorno e respiro.</p>
                     <button class="btn">Saiba Mais</button>
                 </div>
             </div>
@@ -118,28 +113,22 @@
                 </div>
                 <div class="content">
                     <p class="product-tag">Filtros de Ar Comprimido</p>
-                    <p class="product-name"></p>
-                    <p class="description">
-                        Elementos diversos, filtros completos, purgatórios e secadores.
-                    </p>
+                    <p class="description">Filtros completos, purgadores e secadores.</p>
                     <button class="btn">Saiba Mais</button>
                 </div>
             </div>
-            
+
             <div class="item">
                 <div class="product-img">
                     <img src="./img/cilPneum.png">
                 </div>
                 <div class="content">
                     <p class="product-tag">Componentes Pneumáticos</p>
-                    <p class="product-name">Cílindro Pneumático</p>
-                    <p class="description">
-
-                    </p>
+                    <p class="product-name">Cilindro Pneumático</p>
                     <button class="btn">Saiba Mais</button>
                 </div>
             </div>
-            
+
             <div class="item">
                 <div class="product-img">
                     <img src="./img/cLubrifil.png">
@@ -147,13 +136,10 @@
                 <div class="content">
                     <p class="product-tag">Componentes Pneumáticos</p>
                     <p class="product-name">Conjunto Lubrifil</p>
-                    <p class="description">
-
-                    </p>
                     <button class="btn">Saiba Mais</button>
                 </div>
             </div>
-            
+
             <div class="item">
                 <div class="product-img">
                     <img src="./img/cilMiniIso.png">
@@ -161,9 +147,6 @@
                 <div class="content">
                     <p class="product-tag">Componentes Pneumáticos</p>
                     <p class="product-name">Cilindro Mini ISO</p>
-                    <p class="description">
-
-                    </p>
                     <button class="btn">Saiba Mais</button>
                 </div>
             </div>
@@ -175,13 +158,9 @@
                 <div class="content">
                     <p class="product-tag">Componentes Pneumáticos</p>
                     <p class="product-name">Válvula Rotativa</p>
-                    <p class="description">
-
-                    </p>
                     <button class="btn">Saiba Mais</button>
                 </div>
-            </div>       
-        
+            </div>
 
         </div>
 
@@ -201,81 +180,135 @@
                 <div class="dot"></div>
                 <div class="dot"></div>
                 <div class="dot"></div>
-                <div class="dot"></div>                
-
+                <div class="dot"></div>
             </div>
         </div>
 
     </main>
 
-  <div class="whats-float">  
-  <a href="https://wa.me/5541987082010?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es.">
-    <i class="fa-brands fa-whatsapp"></i> 
-    <img src="./img/icnwhats.png">
-  </a>
-  </div>
-  <!-- ================= DECORAÇÃO DE NATAL ================= -->
+    <div class="whats-float">
+        <a href="https://wa.me/5541987082010?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es.">
+            <img src="./img/icnwhats.png">
+        </a>
+    </div>
 
-<!-- Mensagem de Natal separada -->
-<div class="mensagem-natal">
-  🎄 <strong>Desejamos um Feliz Natal!</strong> 🎄
-</div>
+    <!-- ================= DECORAÇÃO DE NATAL ================= -->
 
-<!-- Touca de Papai Noel na logo -->
-<img class="touca-logo" src="https://i.imgur.com/RG2b2bM.png" alt="Touca de Natal">
+    <div class="mensagem-natal">
+        🎄 <strong>Desejamos um Feliz Natal!</strong> 🎄
+    </div>
 
-<!-- Papai Noel dentro da bolha esquerda -->
-<img class="papai-bolha" src="./img/natal.png" alt="Papai Noel Sorrindo">
+    <img class="touca-logo" src="https://i.imgur.com/RG2b2bM.png" alt="Touca de Natal">
 
-<style>
-/* ================== MENSAGEM NATAL ================== */
-.mensagem-natal {
-    position: fixed;
-    top: 90px;
-    right: 25px;
-    background: rgba(255, 0, 0, 0.55);
-    padding: 15px 25px;
-    border-radius: 12px;
-    color: #fff;
-    font-size: 1.3rem;
-    font-weight: 700;
-    z-index: 9999;
-    backdrop-filter: blur(4px);
-    box-shadow: 0 0 10px rgba(255, 0, 0, .7);
-}
+    <img class="papai-bolha" src="./img/natal.png" alt="Papai Noel Sorrindo">
 
-/* ================== TOUCA NA LOGO ================== */
-/*.touca-logo {
-    position: fixed;
-    top: 6px;       
-    left: 75px; 
-    width: 70px;
-    z-index: 9999;
-    pointer-events: none;
-    transform: rotate(-18deg);
-}*/
+    <style>
+        .mensagem-natal {
+            position: fixed;
+            top: 90px;
+            right: 25px;
+            background: rgba(255, 0, 0, 0.55);
+            padding: 15px 25px;
+            border-radius: 12px;
+            color: #fff;
+            font-size: 1.3rem;
+            font-weight: 700;
+            z-index: 9999;
+            backdrop-filter: blur(4px);
+            box-shadow: 0 0 10px rgba(255, 0, 0, .7);
+        }
 
+        .papai-bolha {
+            position: absolute;
+            top: 12.1%;
+            left: 13%;
+            width: 160px;
+            z-index: 3;
+            pointer-events: none;
+            animation: piscar 2.5s infinite;
+        }
 
-/* ================== PAPAI NOEL NA BOLHA ================== */
-.papai-bolha {
-    position: absolute;
-    top: 14%;               /* coincide com circle:nth-child(1) */
-    left: 11%;
-    width: 160px;           /* ajuste de tamanho */
-    z-index: 3;
-    pointer-events: none;
-    animation: piscar 2.5s infinite;
-}
+        @keyframes piscar {
+            0%, 10%, 100% { filter: brightness(1); }
+            5% { filter: brightness(0.4); }
+        }
 
-/* Animação de piscar */
-@keyframes piscar {
-    0%, 10%, 100% { filter: brightness(1); }
-    5% { filter: brightness(0.4); }
-}
-</style>
+        /* ================== NEVE (ADICIONADO) ================== */
+        #snow-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* não interfere no site */
+            z-index: 1; /* atrás de tudo */
+        }
+        /* ========================================================= */
+    </style>
 
-<!-- ================= FIM DECORAÇÃO DE NATAL ================= -->
+    <!-- SCRIPT DO EFEITO DE NEVE (ADICIONADO) -->
+    <script>
+    const canvas = document.getElementById("snow-canvas");
+    const ctx = canvas.getContext("2d");
 
+    function resizeSnow() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    resizeSnow();
+    window.addEventListener("resize", resizeSnow);
+
+    const maxFlakes = 70;
+    const flakes = [];
+
+    for (let i = 0; i < maxFlakes; i++) {
+        flakes.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            r: Math.random() * 3 + 1,
+            d: Math.random() + 1
+        });
+    }
+
+    let angle = 0;
+
+    function drawSnow() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        ctx.fillStyle = "white";
+        ctx.beginPath();
+
+        for (let f of flakes) {
+            ctx.moveTo(f.x, f.y);
+            ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
+        }
+
+        ctx.fill();
+        updateSnow();
+    }
+
+    function updateSnow() {
+        angle += 0.01;
+
+        for (let f of flakes) {
+            f.y += Math.pow(f.d, 2) + 1;
+            f.x += Math.sin(angle) * 0.5;
+
+            if (f.y > canvas.height) {
+                f.y = -5;
+                f.x = Math.random() * canvas.width;
+            }
+        }
+    }
+
+    function animateSnow() {
+        drawSnow();
+        requestAnimationFrame(animateSnow);
+    }
+
+    animateSnow();
+    </script>
 
 </body>
+
 </html>
