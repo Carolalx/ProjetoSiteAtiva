@@ -1,3 +1,4 @@
+/* Estilos gerais */
 * {
     margin: 0;
     padding: 0;
@@ -24,6 +25,7 @@ header {
     align-items: center;
     z-index: 3;
     flex-wrap: wrap;  /* Permite que os itens se reorganizem em telas menores */
+    width: 100%;      /* Garantir que o cabeçalho ocupe 100% da tela */
 }
 
 .logo {
@@ -48,21 +50,23 @@ header nav {
     display: flex;
     justify-content: flex-end; /* Alinha o menu à direita */
     gap: 20px;
+    flex-wrap: wrap; /* Permite que os itens se reorganizem se não houver espaço suficiente */
+    width: 100%;
+    max-width: 100%; /* Assegura que a largura total seja respeitada */
 }
 
 header nav ul {
     display: flex;
-    justify-content: space-between;
     gap: 20px;
-    width: 100%;
-    flex-wrap: nowrap;
     margin: 0;
     padding: 0;
+    flex-wrap: wrap; /* Permite quebrar a linha em telas menores */
+    justify-content: flex-start; /* Alinha os itens à esquerda */
+    width: 100%;   /* Garantir que os itens se ajustem ao tamanho do container */
 }
 
 header nav li {
     position: relative;
-    list-style: none;
     white-space: nowrap;
     padding: 0 10px;
     opacity: 1;                            /* Garante que os itens comecem visíveis */
@@ -96,6 +100,32 @@ header nav li:hover:after {
     width: 100%;
 }
 
+/* Lista no Container */
+.list {
+    width: 100%; /* Agora ocupa toda a largura disponível */
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.item{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    /* ANIMAÇÃO */
+    transform: translateX(100vw);
+    transition: transform 0.7s ease-in-out, opacity 0.7s ease-in-out;
+}
+
+.active{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ===================== ANIMAÇÕES ===================== */
 .container {
     height: 100vh;
     position: relative;
@@ -109,13 +139,10 @@ header nav li:hover:after {
     height: 500px;
     border-radius: 50%;
     background: radial-gradient(circle, rgba(0, 247, 255, 0.2) 0%, rgba(15, 15, 30, 0) 70%);
-
-    /*maneira de centralizar 100%*/
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-
     filter: blur(50px);
     z-index: 1;
     animation: pulse 3s infinite alternate;
@@ -132,9 +159,9 @@ header nav li:hover:after {
     }    
 }
 
-/* Dropdown estará escondido por padrão */
+/* Dropdown */
 nav ul li.dropdown .dropdown-menu {
-    display: none !important;  /* Garante que o menu fique escondido por padrão */
+    display: none !important;
     position: absolute;
     top: 100%;
     left: 0;
@@ -146,57 +173,32 @@ nav ul li.dropdown .dropdown-menu {
     z-index: 1000;
 }
 
-/* Dropdown só será exibido quando a classe .show for adicionada */
 nav ul li.dropdown .dropdown-menu.show {
-    display: block !important; /* Exibe quando a classe .show é adicionada */
+    display: block !important;
 }
 
-.list {
-    width: 80%;
-    height: 100%;
-    margin: 0 auto;
-    position: relative;
-}
-
-.item{
-    position: absolute;
-    inset: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-
-    /* ANIMAÇÃO */
-    transform: translateX(100vw);
-    transition: transform 0.7s ease-in-out, opacity 0.7s ease-in-out;
-}
-
-.active{
-    opacity: 1;
-    transform: translateX(0);
-}
-  
-/* ESITLO ICONE WHATS */
+/* ===================== WHATS APP FLOAT ===================== */
 .whats-float {
-              position: fixed;
-              bottom: 20px;
-              right: 20px;
-              width: 65px;
-              height: 65px;
-              display: flex;
-              border-radius: 50%;
-              align-items: center;
-              justify-content: center;
-              box-shadow: 0 0 12px rgba(0, 0, 0, 0.35);
-              text-decoration: none;
-              z-index: 9999;
-          }
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 65px;
+    height: 65px;
+    display: flex;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.35);
+    text-decoration: none;
+    z-index: 9999;
+}
 
-          .whats-icon {
-              width: 48px;
-              height: 48px;
-          }
+.whats-icon {
+    width: 48px;
+    height: 48px;
+}
 
+/* ===================== PRODUTO ===================== */
 .product-img{
     width: 45%;
     height: 100%;
@@ -211,8 +213,6 @@ nav ul li.dropdown .dropdown-menu.show {
     max-width: 800%;
     max-height: 90%;
     filter: drop-shadow(0 0 30px rgba(0, 247, 255, 0.3));
-
-    /* ANIMAÇÃO */
     transform: translateX(200px);
     opacity: 0;
     transition: transform 0.6s ease, opacity 0.6s ease;
@@ -248,7 +248,6 @@ nav ul li.dropdown .dropdown-menu.show {
     font-family: "Orbitron", sans-serif;
     line-height: 1.1;
     margin-bottom: 20px;
-    /* ANIMAÇÃO */
     transform: translateX(400px);
     opacity: 0;
     transition: transform 0.6s ease, opacity 0.6s ease;
@@ -260,14 +259,12 @@ nav ul li.dropdown .dropdown-menu.show {
     opacity: 1;
 }
 
-
 .description {
     font-size: 1.1rem;
     color: #b8b8d0;
     line-height: 1.6;
     margin-bottom: 30px;
     max-width: 600px;
-    /* ANIMAÇÃO */
     transform: translateX(400px);
     opacity: 0;
     transition: transform 0.6s ease, opacity 0.6s ease;
@@ -278,7 +275,6 @@ nav ul li.dropdown .dropdown-menu.show {
     transform: translateX(0);
     opacity: 1;
 }
-
 
 .btn {
     padding: 12px 16px;
@@ -400,35 +396,7 @@ nav ul li.dropdown .dropdown-menu.show {
     left: 70%;
 }
 
-/* ===== ESPAÇAMENTOS GERAIS ===== */
-
-/* Galeria das aplicações diversas */
-.imagens-apldiv {
-    display: flex;
-    gap: 20px;            /* espaço entre imagens */
-    flex-wrap: wrap;      /* permite quebrar em telas pequenas */
-    justify-content: center; /* centraliza as imagens */
-    margin-bottom: 40px;  /* espaçamento abaixo */
-}
-
-.imagens-apldiv img {
-    width: 220px;         /* ajuste como quiser */
-    height: auto;
-    margin: 0;            /* remove margin global do img */
-    display: block;
-}
-
-#mercado p {
-    line-height: 1;
-}
-
-#FiltrosAlicacoesDiv p {
-    text-align: justify;
-    text-justify: inter-word;
-}
-
-
-/* Define espaçamento padrão entre seções */
+/* Espaçamentos gerais */
 main > * {
     margin-top: 40px;
 }
@@ -440,7 +408,6 @@ h1 {
 }
 
 h2 {
-
     margin-top: 40px;
     margin-bottom: 40px;
 }
@@ -459,13 +426,13 @@ p {
     margin-top: 10px;
     margin-bottom: 70px;
     line-height: 1.5;
-    white-space: pre-line; /* Mantém quebras de linha que você usou no texto */
+    white-space: pre-line;
 }
 
 /* Imagens */
 img {
     display: block;
-    margin: 25px auto;  /* afasta e centraliza */
+    margin: 25px auto;
     max-width: 100%;
 }
 
@@ -488,7 +455,7 @@ img {
 }
 
 .logo-sobre {
-    margin-top: 8%; /* mude o valor como quiser */
+    margin-top: 8%;
 }
 
 .pagina-sobre {
@@ -501,17 +468,17 @@ img {
   width: 90%;
   height: 2px;
   background-color: #ccc;
-  margin: 10px auto; /* centraliza automaticamente */
+  margin: 10px auto;
 }
 
 .pagina-sobre header nav ul li {
     list-style: none;
 }
 
-/* Página Sobre: manter sombreamento, mudar fonte */
+/* Página Sobre */
 .pagina-sobre header nav ul li a {
-    font-family: "Montserrat", sans-serif; /* mesma do index */
-    text-shadow: 0 0 10px rgba(0, 247, 255, 0.5); /* mantém o sombreamento */
+    font-family: "Montserrat", sans-serif;
+    text-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
 }
 
 /* Footer */
@@ -522,11 +489,7 @@ footer {
   opacity: 0.95;
 }
 
-/* ============================================================
-   RESPONSIVIDADE FLUIDA UNIVERSAL (serve para PC e celular)
-   ============================================================ */
-
-/* Fontes fluidas */
+/* Responsividade */
 .product-name {
     font-size: clamp(1.4rem, 3vw, 2.8rem);
 }
@@ -569,5 +532,3 @@ footer {
 .dot {
     width: clamp(20px, 3vw, 40px);
 }
-
-
