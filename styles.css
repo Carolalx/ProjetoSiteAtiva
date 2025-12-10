@@ -657,28 +657,41 @@ footer {
         gap: 10px;
     }
 
+        /* Logo ajustada para não sobrecarregar a tela */
     .logo {
-        font-size: 1.4rem;   /* Logo ainda mais compacta */
+        font-size: 1.4rem;
     }
 
     .logo-icon {
-        max-height: 1.2em;    /* Tamanho de ícone ajustado */
+        max-height: 1.2em;
     }
 
-    /* Papai Noel e Mensagem de Natal em telas pequenas */
+    /* Ajustes no Papai Noel */
     .papai-bolha {
-        top: 70px;            /* Ajuste a posição vertical para não sobrepor elementos */
-        right: 5px;           /* Mais próximo da borda direita */
-        width: clamp(40px, 6vw, 60px);  /* Ajuste para diminuir mais o tamanho do Papai Noel */
+        position: absolute; /* Alterado para absolute, para não interferir no layout */
+        top: 100px; /* Ajuste mais baixo */
+        right: 5px;
+        width: clamp(40px, 8vw, 60px); /* Aumentei um pouco a largura para que ainda seja visível */
+        z-index: 5; /* Garante que o Papai Noel apareça acima dos outros elementos */
     }
 
+    /* Ajustes na Mensagem de Natal */
     .mensagem-natal {
-        font-size: 0.65rem;   /* Ajuste o tamanho da fonte para telas menores */
-        top: calc(130px + 15vh); /* Mais para baixo, afastando da logo */
+        font-size: 0.75rem;  /* Aumentei um pouco para que seja legível, mas ainda pequena */
+        top: 150px;  /* Desloquei para baixo para não sobrepor outros elementos */
         right: 10px;
-        padding: clamp(3px, 0.8vw, 8px) clamp(5px, 1.5vw, 12px); /* Ajuste no padding para não ficar muito grande */
+        padding: clamp(3px, 0.8vw, 8px) clamp(5px, 1.5vw, 12px); /* Ajuste no padding */
+        z-index: 5; /* Mesma prioridade para a mensagem */
+    }
+    
+    /* Ajustes no Header para garantir que a navegação não seja coberta */
+    header {
+        min-height: 60px;  /* Garantir que o header tenha altura suficiente */
     }
 
+    header nav ul {
+        gap: 10px;
+    }
 
     .product-name {
         font-size: 1.4rem;
