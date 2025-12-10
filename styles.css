@@ -840,73 +840,79 @@ nav ul li.dropdown .dropdown-menu li a:hover {
     display: block;                        /* Garante que o ícone seja tratado como bloco */
 }
 
-/* Responsividade para telas menores */
-
-/* Até 768px (telas de tablets e celulares maiores) */
+/* ===== Telas até 768px (celular padrão) ===== */
 @media (max-width: 768px) {
+    header {
+        padding: 20px 15px;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
     .logo {
-        font-size: 1.6rem; /* Reduz o tamanho da logo em telas pequenas */
+        font-size: 1.6rem; /* Logo menor em telas pequenas */
     }
 
-    .logo-icon {
-        max-height: 1.4em; /* Aumenta um pouco o ícone no mobile */
+    header nav {
+        width: 100%;
+        justify-content: center;
     }
-}
 
-/* Papai Noel responsivo */
-.papai-bolha {
-    position: fixed;
-    top: clamp(60px, 5vh, 100px);      /* distância do topo responsiva */
-    right: clamp(10px, 3vw, 20px);     /* alinhado à direita, responsivo */
-    width: clamp(50px, 8vw, 80px);     /* tamanho responsivo */
-    height: auto;                       /* mantém proporção */
-    z-index: 5;
-}
-
-/* Mensagem de Natal responsiva abaixo da lista */
-.mensagem-natal {
-    position: fixed;
-    top: calc(100px + 10vh); /* 100px abaixo do topo do header */
-    right: clamp(5px, 3vw, 20px);
-    font-size: clamp(0.65rem, 1.5vw, 0.9rem);
-    padding: clamp(4px, 1vw, 10px) clamp(6px, 2vw, 15px);
-    z-index: 5;
-}
-
-/* Ajuste da lista e logo em telas pequenas (até 768px) */
-@media (max-width: 768px) {
-
-    /* Colocar a lista abaixo da logo em telas pequenas */
     header nav ul {
-        flex-direction: column;
-        gap: 15px; /* Ajusta o espaçamento entre os itens */
-    }
-
-    /* Garantir que a logo e ícone sejam responsivos e bem posicionados */
-    .logo {
-        font-size: 1.6rem;  /* Reduz um pouco o tamanho da logo em telas pequenas */
+        flex-direction: column; /* Coloca os itens do menu em uma coluna */
+        gap: 15px;
     }
 
     .logo-icon {
-        max-height: 1.5em;  /* Aumenta o ícone um pouco, mas ainda mantém proporção */
+        max-height: 1.5em;  /* Ajuste do tamanho do ícone */
     }
 
-    /* Ajustes para a mensagem de Natal e o Papai Noel */
-    .mensagem-natal {
-        top: calc(120px + 12vh); /* Ajuste de posição mais para baixo */
-        right: 10px;  /* Mantém a margem direita */
+    .item {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
     }
 
-    .papai-bolha {
-        top: calc(70px + 6vh); /* Ajusta a posição vertical */
-        right: 10px;  /* Ajusta a posição do lado direito */
+    .product-img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .content {
+        width: 100%;
+        padding: 0;
+        align-items: center;
+    }
+
+    /* Remove animações exageradas no mobile */
+    .product-name,
+    .description,
+    .product-img img {
+        transform: none !important;
+    }
+
+    .arrows {
+        top: auto;
+        bottom: 120px;
+        width: 100%;
+    }
+
+    .indicators {
+        bottom: 40px;
+    }
+
+    .tech-circle .circle {
+        transform: scale(0.5);
+        opacity: 0.15;
     }
 }
 
 /* ===== Telas até 480px (celulares pequenos) ===== */
 @media (max-width: 480px) {
+    header nav ul {
+        gap: 10px;
+    }
 
-    /* Logo ainda mais compacta */
     .logo {
         font-size: 1.4rem;   /* Diminui mais o tamanho da logo */
     }
@@ -927,7 +933,6 @@ nav ul li.dropdown .dropdown-menu li a:hover {
         right: 10px;
     }
 
-    /* Ajustes adicionais para outros elementos na tela */
     header nav ul {
         gap: 10px;
     }
