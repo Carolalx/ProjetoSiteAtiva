@@ -370,6 +370,15 @@ header nav li:hover:after {
     display: block;
 }
 
+#mercado p {
+    line-height: 1;
+}
+
+#FiltrosAlicacoesDiv p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
 
 /* Define espaçamento padrão entre seções */
 main > * {
