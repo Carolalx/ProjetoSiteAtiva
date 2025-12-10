@@ -765,9 +765,9 @@ nav ul li.dropdown .dropdown-menu li a:hover {
 /* Papai Noel */
 .papai-bolha {
     position: fixed;
-    top: clamp(50px, 5vh, 80px);       /* distância do topo */
-    left: clamp(10px, 3vw, 20px);      /* distância da esquerda */
-    width: clamp(50px, 10vw, 80px);    /* tamanho responsivo */
+    top: clamp(50px, 5vh, 80px);        /* distância do topo */
+    right: clamp(10px, 3vw, 20px);      /* agora fixo à direita */
+    width: clamp(50px, 10vw, 80px);     /* tamanho responsivo */
     z-index: 5;
 }
 
