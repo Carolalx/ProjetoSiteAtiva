@@ -44,6 +44,8 @@ header {
     display: block;
 }
 
+
+
 header nav ul {
     display: flex;
     gap: 30px; /* ou 2rem, um valor fixo seguro */
@@ -745,38 +747,54 @@ nav ul li.dropdown .dropdown-menu li a:hover {
     display: block;
 }
 
-/* ============================
-   RESPONSIVIDADE — PAPAI NOEL
-   ============================ */
+/* =============================
+   AJUSTE ISOLADO PARA LOGO E NATAL
+   ============================= */
+
+/* Força o logo a sempre ficar acima */
+.logo {
+    z-index: 10;             /* acima de Papai Noel */
+}
+
+/* Limita a altura do ícone do logo para celular */
+@media (max-width: 768px) {
+    .logo-icon {
+        max-height: 2.5rem;  /* nunca maior que o texto */
+        width: auto;
+    }
+}
+
+/* Ajusta Papai Noel e mensagem para não sobrepor o logo */
 @media (max-width: 768px) {
     .papai-bolha {
-        width: 80px;        /* diminui tamanho */
-        top: 18%;           /* baixa um pouco */
-        left: 5%;           /* gruda mais na esquerda */
+        top: 60px;           /* garante distância do topo */
+        left: 10px;
+        width: 60px;
+        z-index: 5;          /* abaixo do logo */
     }
 
     .mensagem-natal {
-        font-size: 0.85rem;   /* texto menor */
-        padding: 10px 18px;   /* menos espaço */
-        top: 75px;            /* sobe um pouco */
-        right: 15px;
+        top: 60px;           /* mesma altura do Papai Noel */
+        right: 10px;
+        font-size: 0.75rem;
+        padding: 5px 10px;
+        z-index: 5;          /* abaixo do logo */
     }
 }
 
-/* Telas bem pequenas (celulares pequenos) */
+/* Ajuste extra para celulares muito pequenos */
 @media (max-width: 480px) {
     .papai-bolha {
-        width: 65px;
-        top: 20%;
-        left: 3%;
+        width: 50px;
+        top: 50px;
+        left: 8px;
     }
 
     .mensagem-natal {
-        font-size: 0.75rem;
-        padding: 8px 15px;
-        top: 70px;
-        right: 10px;
+        font-size: 0.65rem;
+        top: 50px;
+        right: 8px;
+        padding: 4px 8px;
     }
 }
-
 
