@@ -594,11 +594,11 @@ footer {
 
     header nav {
         width: 100%;
-        justify-content: flex-start;
+        justify-content: center;
     }
 
     header nav ul {
-        flex-direction: flex-start;   /* Coloca os itens do menu em uma coluna */
+        flex-direction: column;   /* Coloca os itens do menu em uma coluna */
         gap: 15px;
         text-align: left;        /* Centraliza os itens do menu
         align-items: flex-start !important;
