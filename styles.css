@@ -52,18 +52,33 @@ header nav {
 
 header nav ul {
     display: flex;
-    gap: 30px;
-    justify-content: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    flex-wrap: nowrap;
+    margin: 0;
+    padding: 0;
 }
 
 header nav li {
-    cursor: pointer;
     position: relative;
-    padding: 5% 0;
+    list-style: none;
+    white-space: nowrap;
+    padding: 0 10px;
+    opacity: 1;                            /* Garante que os itens comecem visíveis */
+    transform: translateY(0);               /* Mantém os itens na posição inicial */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+header nav li.active {
+    opacity: 1;                            /* Aumenta a opacidade para visível */
+    transform: translateY(0);               /* Permite que o item se mova para a posição original */
 }
 
 header nav li a {
+    text-decoration: none;
     color: #fff;
+    font-size: 1.1rem;
 }
 
 header nav li::after {
