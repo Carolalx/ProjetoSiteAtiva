@@ -25,26 +25,26 @@ header {
     z-index: 3;
 }
 
+/* Logo responsivo */
 .logo {
     position: relative;
     font-family: "Montserrat", sans-serif;
-    font-size: 2rem;        /* tamanho do texto */
-    font-weight: 900;       /* bem gordinho */
-    color: hwb(64 0% 0%);
-    text-shadow: 0 0 10px rgba(238, 255, 0, 0.952);
+    font-size: clamp(1.5rem, 4vw, 2rem);       /* Tamanho responsivo do texto */
+    font-weight: 900;                         /* Manter a espessura do texto */
+    color: hwb(64 0% 0%);                     /* Cor do texto */
+    text-shadow: 0 0 10px rgba(238, 255, 0, 0.952); /* Mantém o efeito de brilho */
     display: flex;
-    flex-direction: column;  /* ícone acima do texto */
-    align-items: center;     /* centraliza horizontalmente */
-    gap: 5px;                /* espaço entre ícone e texto */
+    flex-direction: column;                   /* Ícone acima do texto */
+    align-items: center;                      /* Centraliza horizontalmente */
+    gap: clamp(4px, 1vw, 8px);                 /* Espaçamento fluido entre ícone e texto */
 }
 
+/* Logo icon responsivo (ajuste para aumentar um pouco o tamanho) */
 .logo-icon {
-    width: auto;             /* mantém proporção */
-    max-height: 1em;         /* nunca maior que a altura do texto */
-    display: block;
+    width: auto;                             /* Mantém a proporção da imagem */
+    max-height: clamp(1.5em, 6vw, 2em);       /* Aumenta o tamanho máximo do ícone */
+    display: block;                           /* Garante o display correto */
 }
-
-
 
 header nav ul {
     display: flex;
@@ -762,19 +762,20 @@ nav ul li.dropdown .dropdown-menu li a:hover {
     width: auto;
 }
 
-/* Papai Noel */
+/* Papai Noel responsivo */
 .papai-bolha {
     position: fixed;
-    top: clamp(50px, 5vh, 80px);        /* distância do topo */
-    right: clamp(10px, 3vw, 20px);      /* agora fixo à direita */
-    width: clamp(50px, 10vw, 80px);     /* tamanho responsivo */
+    top: clamp(60px, 5vh, 100px);      /* distância do topo responsiva */
+    right: clamp(10px, 3vw, 20px);     /* alinhado à direita, responsivo */
+    width: clamp(50px, 8vw, 80px);     /* tamanho responsivo */
+    height: auto;                       /* mantém proporção */
     z-index: 5;
 }
 
-/* Mensagem de Natal */
+/* Mensagem de Natal responsiva abaixo da lista */
 .mensagem-natal {
     position: fixed;
-    top: clamp(100px, 10vh, 140px); /* aumenta a distância do topo */
+    top: calc(20px + 100%); /* 20px abaixo do topo do header */
     right: clamp(5px, 3vw, 20px);
     font-size: clamp(0.65rem, 1.5vw, 0.9rem);
     padding: clamp(4px, 1vw, 10px) clamp(6px, 2vw, 15px);
