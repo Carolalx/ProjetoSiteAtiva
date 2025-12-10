@@ -26,12 +26,24 @@ header {
 }
 
 .logo {
+    position: relative;
     font-family: "Montserrat", sans-serif;
-    font-size: 2rem;
-    font-weight: 900;
+    font-size: 2rem;        /* tamanho do texto */
+    font-weight: 900;       /* deixa bem gordinho */
     color: hwb(64 0% 0%);
     text-shadow: 0 0 10px rgba(238, 255, 0, 0.952);
+    display: flex;
+    flex-direction: column;  /* ícone acima do texto */
+    align-items: center;     /* centraliza horizontalmente */
+    gap: 5px;                /* espaço entre ícone e texto */
 }
+
+.logo-icon {
+    width: 40px;     /* ajuste conforme quiser */
+    height: auto;
+    display: block;
+}
+
 
 header nav ul {
     display: flex;
