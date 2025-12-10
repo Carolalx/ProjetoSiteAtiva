@@ -774,7 +774,7 @@ nav ul li.dropdown .dropdown-menu li a:hover {
 /* Mensagem de Natal */
 .mensagem-natal {
     position: fixed;
-    top: clamp(50px, 5vh, 80px);
+    top: clamp(100px, 10vh, 140px); /* aumenta a distância do topo */
     right: clamp(5px, 3vw, 20px);
     font-size: clamp(0.65rem, 1.5vw, 0.9rem);
     padding: clamp(4px, 1vw, 10px) clamp(6px, 2vw, 15px);
