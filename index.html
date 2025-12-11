@@ -41,7 +41,6 @@
         </nav>
     </header>
 
-
     <main class="container">
 
         <div class="tech-circle">
@@ -60,7 +59,6 @@
                     <p class="product-tag">Filtros de processos</p>
                     <p class="product-name">CARCAÇAS DE FILTROS EM AÇO INOX 304 OU 316</p>
                     <p class="description">Carcaças completas para filtros cartucho e tipo BAG em aço inox.</p>
-                    <!--<button class="btn">Saiba Mais</button>-->
                 </div>
             </div>
 
@@ -72,7 +70,6 @@
                     <p class="product-tag">Filtros de processos</p>
                     <p class="product-name">Elementos filtrantes tipo cartucho</p>
                     <p class="description">Elementos em várias medidas, PP, inox, carvão ativado etc.</p>
-                    <!--<button class="btn">Saiba Mais</button>-->
                 </div>
             </div>
 
@@ -84,7 +81,6 @@
                     <p class="product-tag">Filtros de processos</p>
                     <p class="product-name">Filtros Bag Bolsa</p>
                     <p class="description">Elementos em nylon, polipropileno e poliéster.</p>
-                    <!--<button class="btn">Saiba Mais</button>-->
                 </div>
             </div>
 
@@ -95,7 +91,6 @@
                 <div class="content">
                     <p class="product-tag">Filtros Hidráulicos</p>
                     <p class="description">Elementos para alta pressão, retorno e respiro.</p>
-                    <!--<button class="btn">Saiba Mais</button>-->
                 </div>
             </div>
 
@@ -106,7 +101,6 @@
                 <div class="content">
                     <p class="product-tag">Filtros de Ar Comprimido</p>
                     <p class="description">Filtros completos, purgadores e secadores.</p>
-                    <!--<button class="btn">Saiba Mais</button>-->
                 </div>
             </div>
 
@@ -117,7 +111,6 @@
                 <div class="content">
                     <p class="product-tag">Componentes Pneumáticos</p>
                     <p class="product-name">Cilindro Pneumático</p>
-                    <!--<button class="btn">Saiba Mais</button>-->
                 </div>
             </div>
 
@@ -128,7 +121,6 @@
                 <div class="content">
                     <p class="product-tag">Componentes Pneumáticos</p>
                     <p class="product-name">Conjunto Lubrifil</p>
-                    <!--<button class="btn">Saiba Mais</button>-->
                 </div>
             </div>
 
@@ -139,7 +131,6 @@
                 <div class="content">
                     <p class="product-tag">Componentes Pneumáticos</p>
                     <p class="product-name">Cilindro Mini ISO</p>
-                    <!--<button class="btn">Saiba Mais</button>-->
                 </div>
             </div>
 
@@ -150,7 +141,6 @@
                 <div class="content">
                     <p class="product-tag">Componentes Pneumáticos</p>
                     <p class="product-name">Válvula Rotativa</p>
-                    <!--<button class="btn">Saiba Mais</button>-->
                 </div>
             </div>
 
@@ -184,14 +174,43 @@
             <img src="./img/icnwhats.png">
         </a>
     </div>
+    <div class="catalogo-float">
+        <a href="catalogo.html" class="btn">Ver Catálogo</a>
+    </div>
+
+    <style>
+    .catalogo-float {
+        position: fixed;
+        bottom: 100px; /* acima do WhatsApp */
+        right: 20px;
+        z-index: 9998; /* abaixo do WhatsApp */
+    }
+
+    .catalogo-float .btn {
+        display: inline-block;
+        padding: clamp(8px, 1vw, 14px) clamp(12px, 2vw, 20px);
+        background: linear-gradient(90deg, #00f7ff, #0066ff);
+        color: #000;
+        font-weight: 600;
+        border-radius: 30px;
+        text-decoration: none;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+    }
+
+    .catalogo-float .btn:hover {
+        background: rgba(0, 247, 255, 0.5);
+    }
+</style>
 
     <!-- ================= DECORAÇÃO DE NATAL ================= -->
 
     <div class="mensagem-natal">
         🎄 <strong>Desejamos um Feliz Natal!</strong> 🎄
-    
 
-    <img class="papai-bolha" src="./img/natal.png" alt="Papai Noel Sorrindo">
+
+        <img class="papai-bolha" src="./img/natal.png" alt="Papai Noel Sorrindo">
     </div>
 
     <style>
