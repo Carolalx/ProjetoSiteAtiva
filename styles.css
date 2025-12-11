@@ -1,16 +1,592 @@
+/* Estilos gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    background-color: #0f0f1e;
+    color: #fff;
+    font-size: 1.3rem;
+    overflow: auto;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 3;
+    flex-wrap: wrap; /* Permite que os itens se reorganizem em telas menores */
+    width: 100%; /* Garantir que o cabeçalho ocupe 100% da tela */
+}
+
+.logo {
+    display: flex; /* Usar Flexbox para alinhar lado a lado */
+    align-items: center; /* Alinha verticalmente o ícone e o texto */
+    gap: 8px; /* Espaçamento entre o texto e o ícone */
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(1.4rem, 4vw, 2rem); /* Tamanho responsivo do texto */
+    font-weight: 900; /* Manter a espessura do texto */
+    color: hwb(64 0% 0%); /* Cor do texto */
+    text-shadow: 0 0 10px rgba(238, 255, 0, 0.952); /* Efeito de brilho */
+}
+
+.logo-icon {
+    width: auto; /* Mantém a proporção da imagem */
+    max-height: clamp(1.5em, 6vw, 2em); /* Ajuste do tamanho do ícone */
+    display: block; /* Garante que o ícone seja tratado como bloco */
+}
+
+header nav {
+    flex-grow: 1; /* Faz o menu ocupar o restante do espaço disponível */
+    display: flex;
+    justify-content: flex-end; /* Alinha o menu à direita */
+    gap: 20px;
+    flex-wrap: nowrap; /* Não permite quebra de linha */
+    width: 100%;
+    max-width: 100%; /* Assegura que a largura total seja respeitada */
+}
+
+header nav ul {
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-start; /* Alinha os itens à esquerda */
+    width: 100%;
+    flex-wrap: nowrap; /* Garante que a lista não quebre linha */
+    overflow: hidden; /* Evita que os itens saiam da tela */
+}
+
+header nav li {
+    position: relative;
+    white-space: nowrap;
+    padding: 0 10px;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    flex-shrink: 1; /* Permite que os itens encolham se necessário */
+    min-width: 0; /* Garante que não ultrapasse o limite de espaço */
+}
+
+header nav li.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+header nav li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+header nav li::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #00f7ff;
+    transition: width 0.5s;
+}
+
+header nav li:hover:after {
+    width: 100%;
+}
+
 /* Responsividade - Ajuste para telas pequenas */
 @media (max-width: 768px) {
-    /* ... (outras alterações) ... */
+    header {
+        padding: 15px 3%;
+        flex-direction: column; /* Coloca o logo e a navegação em linhas separadas */
+        align-items: center; /* Centraliza o logo e a navegação */
+        position: static; /* Remove a posição fixa para rolar o menu junto com o conteúdo */
+    }
+
+    .logo {
+        margin-bottom: 10px; /* Adiciona espaço abaixo do logo */
+        font-size: clamp(1.4rem, 6vw, 2rem); /* Otimiza o tamanho do logo */
+    }
+
+    header nav {
+        width: 100%;
+        justify-content: center;
+        margin-top: 0;
+        max-width: none;
+    }
+
     header nav ul {
-        /* ... */
-        flex-wrap: nowrap; /* IMPEDE A QUEBRA DE LINHA */
-        overflow-x: auto; /* PERMITE ROLAGEM HORIZONTAL SE NECESSÁRIO */
-        /* ... */
+        flex-direction: row;
+        justify-content: space-between; /* Distribui os itens uniformemente */
+        /* === MODIFICAÇÃO PRINCIPAL: Impede a quebra de linha === */
+        flex-wrap: nowrap;
+        /* === MODIFICAÇÃO PARA FORÇAR REDUÇÃO E BARRA DE ROLAGEM === */
+        overflow-x: auto; /* Permite a rolagem horizontal quando necessário */
+        overflow-y: hidden; /* Oculta a barra vertical (não necessária) */
+        padding-bottom: 5px; /* Adiciona um pequeno padding para a barra de rolagem não cortar a sombra/borda */
+        gap: 0; /* Remove o gap fixo para otimizar o espaço */
     }
 
     header nav li {
-        /* ... */
-        white-space: nowrap; /* MANTÉM O TEXTO DO LINK EM UMA ÚNICA LINHA */
-        /* ... */
+        flex-shrink: 1; /* Permite que os itens encolham */
+        flex-grow: 0; /* Impede que os itens cresçam desnecessariamente */
+        min-width: 0; /* Não define um mínimo fixo */
+        padding: 5px 8px;
+        /* === MODIFICAÇÃO: Garante que o texto seja sempre em uma única linha === */
+        white-space: nowrap;
+        text-align: center;
     }
+
+    header nav li a {
+        /* Usa clamp para tamanho de fonte que se adapta */
+        font-size: clamp(0.8rem, 2.5vw, 1.1rem);
+        padding: 5px 0; /* Ajusta o padding do link, se necessário */
+    }
+}
+
+/* Lista no Container */
+.list {
+    width: 100%; /* Agora ocupa toda a largura disponível */
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.item{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    /* ANIMAÇÃO */
+    transform: translateX(100vw);
+    transition: transform 0.7s ease-in-out, opacity 0.7s ease-in-out;
+}
+
+.active{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ===================== ANIMAÇÕES ===================== */
+.container {
+    height: 100vh;
+    position: relative;
+    background: linear-gradient(135deg, #0f0f1e 0%, #1f1f3a 100%);
+    overflow: hidden;
+}
+
+.container::before {
+    content: '';
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 247, 255, 0.2) 0%, rgba(15, 15, 30, 0) 70%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    filter: blur(50px);
+    z-index: 1;
+    animation: pulse 3s infinite alternate;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.5;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(2);
+    }
+}
+
+/* Dropdown */
+nav ul li.dropdown .dropdown-menu {
+    display: none !important;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #0f0f1e;
+    padding: 10px 0;
+    min-width: 180px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    z-index: 1000;
+}
+
+nav ul li.dropdown .dropdown-menu.show {
+    display: block !important;
+}
+
+/* ===================== WHATS APP FLOAT ===================== */
+.whats-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 65px;
+    height: 65px;
+    display: flex;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.35);
+    text-decoration: none;
+    z-index: 9999;
+}
+
+.whats-icon {
+    width: 48px;
+    height: 48px;
+}
+
+/* ===================== PRODUTO ===================== */
+.product-img{
+    width: 45%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+.product-img img {
+    max-width: 800%;
+    max-height: 90%;
+    filter: drop-shadow(0 0 30px rgba(0, 247, 255, 0.3));
+    transform: translateX(200px);
+    opacity: 0;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    transition-delay: 0.5s;
+}
+
+.active .product-img img {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.content {
+    width: 55%;
+    padding-right: 80px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    z-index: 2;
+    flex-direction: column;
+}
+
+.product-tag {
+    font-size: 1rem;
+    text-transform:uppercase;
+    color: #00f7ff;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.product-name {
+    font-size: 2.5rem;
+    font-family: "Orbitron", sans-serif;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    transform: translateX(400px);
+    opacity: 0;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    transition-delay: 0.5s;
+}
+
+.active .product-name {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.description {
+    font-size: 1.1rem;
+    color: #b8b8d0;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    max-width: 600px;
+    transform: translateX(400px);
+    opacity: 0;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    transition-delay: 0.5s;
+}
+
+.active .description {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.btn {
+    padding: 12px 16px;
+    background: linear-gradient(90deg, #00f7ff, #0066ff);
+    border-radius: 30px;
+    color: #000;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    border:none;
+}
+
+.btn:hover {
+    background-color: rgba(0, 247, 255, 0.2);
+    border-color: #00f7ff;
+}
+
+.arrows {
+    position: absolute;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+
+.arrow-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(0, 247, 255, 0.3);
+}
+
+.arrow-btn:hover {
+    background-color: rgba(0, 247, 255, 0.2);
+    border-color: #00f7ff;
+}
+
+.indicators {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    z-index: 5;
+}
+
+.numbers {
+    font-family: "Orbitron", sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.dots{
+    display: flex;
+    gap: 10px;
+}
+
+.dot{
+    width: 40%;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 2%;
+}
+
+.dot.active{
+    background-color: #00f7ff;
+    box-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
+}
+
+.tech-circle{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 247, 255, 0.2);
+}
+
+.circle:nth-child(1){
+    width: 200px;
+    height: 200px;
+    top: 10%;
+    left: 10%;
+}
+
+.circle:nth-child(2){
+    width: 300px;
+    height: 300px;
+    top: 60%;
+    left: 80%;
+}
+
+.circle:nth-child(3){
+    width: 150px;
+    height: 150px;
+    top: 70%;
+    left: 20%;
+}
+
+.circle:nth-child(4){
+    width: 120px;
+    height: 120px;
+    top: 20%;
+    left: 70%;
+}
+
+/* Espaçamentos gerais */
+main > * {
+    margin-top: 40px;
+}
+
+/* Títulos */
+h1 {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+h3 {
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: center;
+    white-space: pre-line;
+}
+
+/* Parágrafos */
+p {
+    margin-top: 10px;
+    margin-bottom: 70px;
+    line-height: 1.5;
+    white-space: pre-line;
+}
+
+/* Imagens */
+img {
+    display: block;
+    margin: 25px auto;
+    max-width: 100%;
+}
+
+/* Ajuste opcional: restringe largura do conteúdo para não ficar muito largo */
+.pagina-sobre main {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Correção apenas para a página Sobre */
+.pagina-sobre .container {
+    height: auto !important;
+    min-height: auto !important;
+    overflow: visible !important;
+}
+
+.pagina-sobre .container::before {
+    display: none !important;
+}
+
+.logo-sobre {
+    margin-top: 8%;
+}
+
+.pagina-sobre {
+    overflow-y: auto !important;
+    height: auto !important;
+    position: static !important;
+}
+
+.linha-centralizada {
+    width: 90%;
+    height: 2px;
+    background-color: #ccc;
+    margin: 10px auto;
+}
+
+/* Aplica sombreamento na lista de navegação da página sobre */
+.pagina-sobre header nav ul {
+    list-style: none;
+    background-color: rgba(15, 15, 30, 0.9); /* Fundo semi-transparente para sombreamento */
+    padding: 10px 15px; /* Adiciona padding para o sombreamento ficar visível */
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Sombra para destacar */
+}
+
+/* Página Sobre - Estilos dos links */
+.pagina-sobre header nav ul li a {
+    font-family: "Montserrat", sans-serif;
+    text-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    color: #00f7ff;
+    font-size: 14px;
+    opacity: 0.95;
+}
+
+/* Responsividade */
+.product-name {
+    font-size: clamp(1.4rem, 3vw, 2.8rem);
+}
+
+.description {
+    font-size: clamp(0.9rem, 1.8vw, 1.2rem);
+}
+
+.product-tag {
+    font-size: clamp(0.7rem, 1.2vw, 1rem);
+}
+
+.btn {
+    font-size: clamp(0.7rem, 1.4vw, 1rem);
+    padding: clamp(8px, 1vw, 14px) clamp(12px, 2vw, 20px);
+}
+
+/* Imagens fluem corretamente */
+.product-img img {
+    max-width: clamp(200px, 40vw, 480px);
+    max-height: clamp(200px, 45vh, 450px);
+    object-fit: contain;
+}
+
+/* Espaçamento geral do item */
+.item {
+    gap: clamp(20px, 5vw, 80px);
+}
+
+/* Arrows */
+.arrow-btn {
+    width: clamp(35px, 6vw, 60px);
+    height: clamp(35px, 6vw, 60px);
+}
+
+.numbers {
+    font-size: clamp(1.4rem, 4vw, 3rem);
+}
+
+.dot {
+    width: clamp(20px, 3vw, 40px);
 }
