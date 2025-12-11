@@ -50,7 +50,7 @@ header nav {
     display: flex;
     justify-content: flex-end; /* Alinha o menu à direita */
     gap: 20px;
-    flex-wrap: wrap; /* Permite que os itens se reorganizem se não houver espaço suficiente */
+    flex-wrap: nowrap; /* Não permite quebra de linha */
     width: 100%;
     max-width: 100%; /* Assegura que a largura total seja respeitada */
 }
@@ -61,24 +61,25 @@ header nav ul {
     margin: 0;
     padding: 0;
     justify-content: flex-start; /* Alinha os itens à esquerda */
-    width: 100%;   /* Garantir que os itens se ajustem ao tamanho do container */
-    flex-wrap: nowrap;  /* Evitar quebra de linha */
-    overflow: hidden;   /* Evitar transbordamento */
+    width: 100%;
+    flex-wrap: nowrap;  /* Garante que a lista não quebre linha */
+    overflow: hidden;   /* Evita que os itens saiam da tela */
 }
 
 header nav li {
     position: relative;
     white-space: nowrap;
     padding: 0 10px;
-    opacity: 1;                            /* Garante que os itens comecem visíveis */
-    transform: translateY(0);               /* Mantém os itens na posição inicial */
+    opacity: 1;
+    transform: translateY(0);
     transition: opacity 0.5s ease, transform 0.5s ease;
-    flex-shrink: 1;                         /* Permite que os itens encolham quando necessário */
+    flex-shrink: 1; /* Permite que os itens encolham se necessário */
+    min-width: 0; /* Garante que não ultrapasse o limite de espaço */
 }
 
 header nav li.active {
-    opacity: 1;                            /* Aumenta a opacidade para visível */
-    transform: translateY(0);               /* Permite que o item se mova para a posição original */
+    opacity: 1; 
+    transform: translateY(0);
 }
 
 header nav li a {
@@ -100,6 +101,19 @@ header nav li::after {
 
 header nav li:hover:after {
     width: 100%;
+}
+
+/* Responsividade - Ajuste para telas pequenas */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: row; /* Garante que os itens permaneçam na mesma linha */
+        justify-content: space-around; /* Espalha os itens horizontalmente */
+    }
+    
+    header nav li {
+        flex-shrink: 1; /* Itens podem encolher */
+        min-width: 0;   /* Permite que os itens encolham sem limite */
+    }
 }
 
 /* Lista no Container */
