@@ -128,3 +128,75 @@ header {
     object-fit: cover;
     border-radius: 6px;
 }
+
+/* ===== Responsividade para telas pequenas ===== */
+@media (max-width: 768px) {
+    header {
+        padding: 15px;
+    }
+
+    .topo-conteudo h1 {
+        font-size: 22px; /* diminui o título */
+    }
+
+    .search-box input {
+        width: 180px; /* diminui a largura do input */
+        padding: 8px;
+    }
+
+    .search-box button {
+        padding: 8px;
+    }
+
+    .produto {
+        width: 45%; /* duas colunas em telas médias */
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px;
+    }
+
+    .logo {
+        font-size: 1.4rem; /* reduz o texto da logo */
+    }
+
+    .logo-icon {
+        max-height: 1.5em; /* reduz o ícone da logo */
+    }
+
+    .topo-conteudo h1 {
+        font-size: 18px; /* título menor */
+    }
+
+    .search-box {
+        flex-direction: column; /* input e botão empilhados */
+        width: 100%;
+    }
+
+    .search-box input {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .search-box button {
+        width: 100%;
+    }
+
+    .produtos-categoria {
+        flex-direction: column; /* produtos empilhados */
+        gap: 10px;
+    }
+
+    .produto {
+        width: 100%; /* ocupa a largura total */
+    }
+
+    .admin-button {
+        bottom: 15px;
+        right: 15px;
+        padding: 10px 16px; /* botão menor */
+    }
+}
+
