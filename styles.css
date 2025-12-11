@@ -24,29 +24,29 @@ header {
     justify-content: space-between;
     align-items: center;
     z-index: 3;
-    flex-wrap: wrap;  /* Permite que os itens se reorganizem em telas menores */
-    width: 100%;      /* Garantir que o cabeçalho ocupe 100% da tela */
+    flex-wrap: wrap; /* Permite que os itens se reorganizem em telas menores */
+    width: 100%; /* Garantir que o cabeçalho ocupe 100% da tela */
 }
 
 .logo {
-    display: flex;                         /* Usar Flexbox para alinhar lado a lado */
-    align-items: center;                   /* Alinha verticalmente o ícone e o texto */
-    gap: 8px;                              /* Espaçamento entre o texto e o ícone */
+    display: flex; /* Usar Flexbox para alinhar lado a lado */
+    align-items: center; /* Alinha verticalmente o ícone e o texto */
+    gap: 8px; /* Espaçamento entre o texto e o ícone */
     font-family: "Montserrat", sans-serif;
-    font-size: clamp(1.4rem, 4vw, 2rem);    /* Tamanho responsivo do texto */
-    font-weight: 900;                      /* Manter a espessura do texto */
-    color: hwb(64 0% 0%);                  /* Cor do texto */
+    font-size: clamp(1.4rem, 4vw, 2rem); /* Tamanho responsivo do texto */
+    font-weight: 900; /* Manter a espessura do texto */
+    color: hwb(64 0% 0%); /* Cor do texto */
     text-shadow: 0 0 10px rgba(238, 255, 0, 0.952); /* Efeito de brilho */
 }
 
 .logo-icon {
-    width: auto;                          /* Mantém a proporção da imagem */
-    max-height: clamp(1.5em, 6vw, 2em);    /* Ajuste do tamanho do ícone */
-    display: block;                        /* Garante que o ícone seja tratado como bloco */
+    width: auto; /* Mantém a proporção da imagem */
+    max-height: clamp(1.5em, 6vw, 2em); /* Ajuste do tamanho do ícone */
+    display: block; /* Garante que o ícone seja tratado como bloco */
 }
 
 header nav {
-    flex-grow: 1;    /* Faz o menu ocupar o restante do espaço disponível */
+    flex-grow: 1; /* Faz o menu ocupar o restante do espaço disponível */
     display: flex;
     justify-content: flex-end; /* Alinha o menu à direita */
     gap: 20px;
@@ -62,8 +62,8 @@ header nav ul {
     padding: 0;
     justify-content: flex-start; /* Alinha os itens à esquerda */
     width: 100%;
-    flex-wrap: nowrap;  /* Garante que a lista não quebre linha */
-    overflow: hidden;   /* Evita que os itens saiam da tela */
+    flex-wrap: nowrap; /* Garante que a lista não quebre linha */
+    overflow: hidden; /* Evita que os itens saiam da tela */
 }
 
 header nav li {
@@ -78,7 +78,7 @@ header nav li {
 }
 
 header nav li.active {
-    opacity: 1; 
+    opacity: 1;
     transform: translateY(0);
 }
 
@@ -105,14 +105,33 @@ header nav li:hover:after {
 
 /* Responsividade - Ajuste para telas pequenas */
 @media (max-width: 768px) {
-    header nav ul {
-        flex-direction: row; /* Garante que os itens permaneçam na mesma linha */
-        justify-content: space-around; /* Espalha os itens horizontalmente */
+    header {
+        padding: 15px 3%; /* Mais espaço nas laterais em telas menores */
     }
-    
+
+    header nav {
+        width: 100%;
+        justify-content: center; /* Centraliza o menu na tela pequena */
+        margin-top: 10px; /* Adiciona um espaço abaixo do logo */
+    }
+
+    header nav ul {
+        flex-direction: row;
+        justify-content: space-around; /* Distribui os itens uniformemente */
+        flex-wrap: wrap; /* PERMITE QUEBRA DE LINHA para caber todas as informações */
+        gap: 10px; /* Reduz o gap entre os itens */
+    }
+
     header nav li {
-        flex-shrink: 1; /* Itens podem encolher */
-        min-width: 0;   /* Permite que os itens encolham sem limite */
+        flex-shrink: 1;
+        min-width: auto; /* Não define um mínimo fixo */
+        padding: 5px 8px; /* Aumenta o padding para mais espaçamento */
+        white-space: normal; /* Permite quebra de linha no texto do link */
+        text-align: center; /* Centraliza o texto se quebrar em duas linhas */
+    }
+
+    header nav li a {
+        font-size: 1rem; /* Reduz ligeiramente o tamanho da fonte */
     }
 }
 
@@ -171,8 +190,8 @@ header nav li:hover:after {
     }
     100% {
         opacity: 1;
-        transform: translate(-50%, -50%) scale(2);        
-    }    
+        transform: translate(-50%, -50%) scale(2);
+    }
 }
 
 /* Dropdown */
@@ -305,7 +324,7 @@ nav ul li.dropdown .dropdown-menu.show {
 
 .btn:hover {
     background-color: rgba(0, 247, 255, 0.2);
-    border-color: #00f7ff;    
+    border-color: #00f7ff;
 }
 
 .arrows {
@@ -330,7 +349,7 @@ nav ul li.dropdown .dropdown-menu.show {
 
 .arrow-btn:hover {
     background-color: rgba(0, 247, 255, 0.2);
-    border-color: #00f7ff;    
+    border-color: #00f7ff;
 }
 
 .indicators {
@@ -346,7 +365,7 @@ nav ul li.dropdown .dropdown-menu.show {
 }
 
 .numbers {
-    font-family: "Orbitron", sans-serif;    
+    font-family: "Orbitron", sans-serif;
     font-size: 3rem;
     font-weight: 800;
     color: rgba(255, 255, 255, 0.2);
@@ -361,7 +380,7 @@ nav ul li.dropdown .dropdown-menu.show {
     width: 40%;
     height: 4px;
     background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 2%;    
+    border-radius: 2%;
 }
 
 .dot.active{
@@ -481,17 +500,22 @@ img {
 }
 
 .linha-centralizada {
-  width: 90%;
-  height: 2px;
-  background-color: #ccc;
-  margin: 10px auto;
+    width: 90%;
+    height: 2px;
+    background-color: #ccc;
+    margin: 10px auto;
 }
 
-.pagina-sobre header nav ul li {
+/* Aplica sombreamento na lista de navegação da página sobre */
+.pagina-sobre header nav ul {
     list-style: none;
+    background-color: rgba(15, 15, 30, 0.9); /* Fundo semi-transparente para sombreamento */
+    padding: 10px 15px; /* Adiciona padding para o sombreamento ficar visível */
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Sombra para destacar */
 }
 
-/* Página Sobre */
+/* Página Sobre - Estilos dos links */
 .pagina-sobre header nav ul li a {
     font-family: "Montserrat", sans-serif;
     text-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
@@ -499,10 +523,10 @@ img {
 
 /* Footer */
 footer {
-  text-align: center;
-  color: #00f7ff;
-  font-size: 14px;
-  opacity: 0.95;
+    text-align: center;
+    color: #00f7ff;
+    font-size: 14px;
+    opacity: 0.95;
 }
 
 /* Responsividade */
