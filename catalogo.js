@@ -41,11 +41,9 @@ function imageToBase64(file) {
    FUNÇÃO: ADICIONAR PRODUTO NA TELA
 ====================================================== */
 function adicionarProdutoNaTela(produto) {
-    // Verifica se já existe grupo para essa categoria
     let grupo = document.querySelector(`.categoria-grupo[data-categoria="${produto.categoria}"]`);
 
     if (!grupo) {
-        // Criar grupo de categoria
         grupo = document.createElement("div");
         grupo.classList.add("categoria-grupo");
         grupo.dataset.categoria = produto.categoria;
@@ -58,7 +56,6 @@ function adicionarProdutoNaTela(produto) {
         containerProdutos.classList.add("produtos-categoria");
         grupo.appendChild(containerProdutos);
 
-        // Alternar cor de fundo da categoria
         const totalGrupos = document.querySelectorAll(".categoria-grupo").length;
         grupo.classList.add(totalGrupos % 2 === 0 ? "fundo-azul" : "fundo-branco");
 
@@ -67,7 +64,6 @@ function adicionarProdutoNaTela(produto) {
 
     const containerProdutos = grupo.querySelector(".produtos-categoria");
 
-    // Criar card do produto
     const produtoDiv = document.createElement("div");
     produtoDiv.classList.add("produto");
     produtoDiv.dataset.id = produto.id;
@@ -82,7 +78,6 @@ function adicionarProdutoNaTela(produto) {
     produtoDiv.appendChild(img);
     produtoDiv.appendChild(nome);
 
-    // Botão excluir apenas se admin logado
     if (adminLogado) {
         const btnDel = document.createElement("button");
         btnDel.textContent = "Excluir";
@@ -114,13 +109,34 @@ function salvarProduto(titulo, imagemUrl, categoria) {
 }
 
 /* =====================================================
-   CARREGAR PRODUTOS AO ABRIR
+   CARREGAR PRODUTOS DO LOCALSTORAGE
 ====================================================== */
 function carregarProdutos() {
     const lista = JSON.parse(localStorage.getItem("produtos")) || [];
     lista.forEach(p => adicionarProdutoNaTela(p));
+
+    // Se não tiver produtos no localStorage, carregar do JSON
+    if (lista.length === 0) {
+        carregarProdutosDeJSON();
+    }
 }
 
+/* =====================================================
+   CARREGAR PRODUTOS DE UM JSON
+====================================================== */
+function carregarProdutosDeJSON() {
+    fetch("produtos.json")
+        .then(res => res.json())
+        .then(lista => {
+            lista.forEach(produto => {
+                salvarProduto(produto.titulo, produto.imagemUrl, produto.categoria);
+                adicionarProdutoNaTela(produto);
+            });
+        })
+        .catch(err => console.error("Erro ao carregar JSON:", err));
+}
+
+// Inicializa produtos
 carregarProdutos();
 
 /* =====================================================
@@ -137,7 +153,6 @@ form.addEventListener("submit", async function (event) {
         return;
     }
 
-    // Converter imagem para Base64
     const imagemUrl = await imageToBase64(imagemInput.files[0]);
 
     const id = salvarProduto(titulo, imagemUrl, categoria);
@@ -157,7 +172,6 @@ function deletarProduto(id) {
     lista = lista.filter(p => p.id !== id);
     localStorage.setItem("produtos", JSON.stringify(lista));
 
-    // Remover do DOM
     const produtoDiv = document.querySelector(`.produto[data-id="${id}"]`);
     if (produtoDiv) produtoDiv.remove();
 
@@ -178,7 +192,6 @@ loginBtn.addEventListener("click", () => {
         areaAdicionar.style.display = "block";
         adminLogado = true;
 
-        // Re-renderizar produtos para mostrar botões de deletar
         produtosContainer.innerHTML = "";
         carregarProdutos();
     } else {
