@@ -60,9 +60,10 @@ header nav ul {
     gap: 20px;
     margin: 0;
     padding: 0;
-    flex-wrap: wrap; /* Permite quebrar a linha em telas menores */
     justify-content: flex-start; /* Alinha os itens à esquerda */
     width: 100%;   /* Garantir que os itens se ajustem ao tamanho do container */
+    flex-wrap: nowrap;  /* Evitar quebra de linha */
+    overflow: hidden;   /* Evitar transbordamento */
 }
 
 header nav li {
@@ -72,6 +73,7 @@ header nav li {
     opacity: 1;                            /* Garante que os itens comecem visíveis */
     transform: translateY(0);               /* Mantém os itens na posição inicial */
     transition: opacity 0.5s ease, transform 0.5s ease;
+    flex-shrink: 1;                         /* Permite que os itens encolham quando necessário */
 }
 
 header nav li.active {
