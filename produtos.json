@@ -1,0 +1,163 @@
+[
+  {
+    "id": 1,
+    "titulo": "CARCAÇAS DE FILTRO EM AÇO INOX 304 OU 316 / CARCAÇAS EM POLIPROPILENO",
+    "imagemUrl": "./img/carcFilInox304316.png",
+    "categoria": "Filtros de Processos",
+    "descricao": "Carcaças completas para filtros cartucho e tipo BAG em aço inox."
+  },
+  {
+    "id": 2,
+    "titulo": "ELEMENTOS FILTRANTES TIPO CARTUCHO",
+    "imagemUrl": "./img/elFilCart.png",
+    "categoria": "Filtros de Processos",
+    "descricao": "Elementos diversos em todos dimensionais e alturas: carvão ativado, polipropileno, microbiológicos, resinados, aço inox entre outros."
+  },
+  {
+    "id": 3,
+    "titulo": "FILTROS BAG OU BOLSA",
+    "imagemUrl": "./img/bagBolsa.png",
+    "categoria": "Filtros de Processos",
+    "descricao": "Elementos em nylon, polipropileno e poliéster em todos os tamanhos e graus de filtragem."
+  },
+  {
+    "id": 4,
+    "titulo": "Filtros Hidráulicos",
+    "imagemUrl": "./img/filtHidr.png",
+    "categoria": "Filtros Hidráulicos",
+    "descricao": "Elementos para alta pressão, filtros de tanque, retorno e respiro."
+  },
+  {
+    "id": 5,
+    "titulo": "Filtros para Ar Comprimido",
+    "imagemUrl": "./img/filArComp.png",
+    "categoria": "Filtros Ar Comprimido",
+    "descricao": "Elementos diversos, filtros completos, purgadores e secadores."
+  },
+  {
+    "id": 6,
+    "titulo": "ELEMENTOS COALESCENTES",
+    "imagemUrl": "./img/elCoal.png",
+    "categoria": "Filtros Ar Comprimido",
+    "descricao": ""
+  },
+  {
+    "id": 7,
+    "titulo": "SECADOR DE ADSORÇÃO",
+    "imagemUrl": "./img/secAds.png",
+    "categoria": "Filtros Ar Comprimido",
+    "descricao": ""
+  },
+  {
+    "id": 8,
+    "titulo": "PURGADORES E VÁLVULAS SOLENÓIDES",
+    "imagemUrl": "./img/purgValvSol.png",
+    "categoria": "Filtros Ar Comprimido",
+    "descricao": ""
+  },
+  {
+    "id": 9,
+    "titulo": "CILÍNDRO PNEUMÁTICO",
+    "imagemUrl": "./img/cilPneum.png",
+    "categoria": "Componentes Pneumáticos",
+    "descricao": ""
+  },
+  {
+    "id": 10,
+    "titulo": "CONJUNTO LUBRIFIL",
+    "imagemUrl": "./img/cLubrifil.png",
+    "categoria": "Componentes Pneumáticos",
+    "descricao": ""
+  },
+  {
+    "id": 11,
+    "titulo": "CILINDRO MINI ISO",
+    "imagemUrl": "./img/cilMiniIso.png",
+    "categoria": "Componentes Pneumáticos",
+    "descricao": ""
+  },
+  {
+    "id": 12,
+    "titulo": "VÁLVULA ROTATIVA",
+    "imagemUrl": "./img/valvRotativa.png",
+    "categoria": "Componentes Pneumáticos",
+    "descricao": ""
+  },
+  {
+    "id": 13,
+    "titulo": "CONEXÕES PNEUMÁTICAS",
+    "imagemUrl": "./img/conecPneum.png",
+    "categoria": "Componentes Pneumáticos",
+    "descricao": ""
+  },
+  {
+    "id": 14,
+    "titulo": "VÁLVULAS PNEUMÁTICAS",
+    "imagemUrl": "./img/valvPneum.png",
+    "categoria": "Componentes Pneumáticos",
+    "descricao": ""
+  },
+  {
+    "id": 15,
+    "titulo": "CILINDRO SEM HASTE",
+    "imagemUrl": "./img/cilSHaste.png",
+    "categoria": "Componentes Pneumáticos",
+    "descricao": ""
+  },
+  {
+    "id": 16,
+    "titulo": "ACESSÓRIOS E TERMINAIS PARA CILINDROS PNEUMÁTICOS",
+    "imagemUrl": "./img/acTerCilPneum.png",
+    "categoria": "Componentes Pneumáticos",
+    "descricao": ""
+  },
+  {
+    "id": 17,
+    "titulo": "Tipo Cartucho",
+    "imagemUrl": "./img/arTipoCartucho.png",
+    "categoria": "Filtros de Ar",
+    "descricao": "Elementos em celulose e poliéster em diversos graus de filtração."
+  },
+  {
+    "id": 18,
+    "titulo": "Filtro Tipo Painel",
+    "imagemUrl": "./img/arTipoPainel.png",
+    "categoria": "Filtros de Ar",
+    "descricao": "Filtros em todos os graus de filtração e medidas específicas para diversas aplicações."
+  },
+  {
+    "id": 19,
+    "titulo": "Mantas Filtrantes",
+    "imagemUrl": "./img/arMantaFiltr.png",
+    "categoria": "Filtros de Ar",
+    "descricao": "Mantas filtrantes nas classes G1, G2, G3, G4, F1, F2..."
+  },
+  {
+    "id": 20,
+    "titulo": "Filtros para aplicações diversas",
+    "imagemUrl": "./img/aplDiv1.png",
+    "categoria": "Filtros Aplicações Diversas",
+    "descricao": "Filtros para compressores de ar, injetoras, equipamentos hidráulicos, filtros especiais por desenho ou amostra, nacionalização de filtros importados e projetos para sistemas de filtração."
+  },
+  {
+    "id": 21,
+    "titulo": "Imagem Aplicação 2",
+    "imagemUrl": "./img/aplDiv2.png",
+    "categoria": "Filtros Aplicações Diversas",
+    "descricao": ""
+  },
+  {
+    "id": 22,
+    "titulo": "Imagem Aplicação 3",
+    "imagemUrl": "./img/aplDiv3.png",
+    "categoria": "Filtros Aplicações Diversas",
+    "descricao": ""
+  },
+  {
+    "id": 23,
+    "titulo": "Imagem Aplicação 4",
+    "imagemUrl": "./img/aplDiv4.png",
+    "categoria": "Filtros Aplicações Diversas",
+    "descricao": ""
+  }
+]
