@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Produtos</title>
+    <link rel="stylesheet" href="catalogo.css">
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="logo">
+            <img src="./img/logoEner.png" alt="Símbolo" class="logo-icon">
+            <span>ATIVA FILTROS</span>
+        </div>
+
+        <div class="topo-conteudo">
+            <h1>Catálogo de Produtos</h1>
+
+            <div class="search-box">
+                <input type="text" id="pesquisa" placeholder="Buscar produtos...">
+                <button id="btn-pesquisa">🔍</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Link Home acima do filtro de categoria -->
+    <div class="home-link-container">
+        <a href="index.html" class="home-link">🏠 Voltar ao Home</a>
+    </div>
+
+    <!-- ===== FILTRO DE CATEGORIA ===== -->
+    <div class="categoria-filtro">
+        <label>Filtrar por categoria:</label>
+        <select id="filtroCategoria">
+            <option value="todas">Todas</option>
+            <option value="Filtros Hidráulicos">Filtros Hidráulicos</option>
+            <option value="Filtros de Processos">Filtros de Processos</option>
+            <option value="Elementos Coalescentes">Filtro Coalescentes</option>
+            <option value="Componentes Pneumáticas">Componentes Pneumáticas</option>
+            <option value="Filtros de Ar">Filtros de Ar</option>
+            <option value="Filtros para Ar Comprimido">Filtros Ar Comprimido</option>
+        </select>
+    </div>
+
+    <!-- ===== AREA ADMIN ===== -->
+    <button id="adminBtn" class="admin-button">Área do Administrador</button>
+
+    <section id="adminLogin" style="display:none; margin: 20px;">
+        <h3>Acesso do Administrador</h3>
+        <input type="password" id="adminPass" placeholder="Digite a senha">
+        <button id="loginBtn">Entrar</button>
+    </section>
+
+    <!-- ===== PRODUTOS ===== -->
+    <section id="catalogo">
+        <div id="produtos-container"></div>
+    </section>
+
+    <!-- ===== FORMULARIO DE ADICIONAR ===== -->
+    <section id="adicionar-produto" style="display:none;">
+        <h2>Adicionar Novo Produto</h2>
+
+        <form id="form-produto">
+            <label for="titulo">Título do Produto</label>
+            <input type="text" id="titulo" required>
+
+            <label for="categoria">Categoria</label>
+            <select id="categoria" required>
+                <option value="">Selecione...</option>
+                <option value="Filtros Hidráulicos">Filtros Hidráulicos</option>
+                <option value="Filtros de Processos">Filtros de Processos</option>
+                <option value="Elementos Coalescentes">Filtro Coalescentes</option>
+                <option value="Componentes Pneumáticas">Componentes Pneumáticas</option>
+                <option value="Filtros de Ar">Filtros de Ar</option>
+                <option value="Filtros para Ar Comprimido">Filtros Ar Comprimido</option>
+            </select>
+
+            <label for="imagem">Imagem do Produto</label>
+            <input type="file" id="imagem" accept="image/*" required>
+
+            <button type="submit">Adicionar Produto</button>
+        </form>
+    </section>
+
+    <script src="catalogo.js"></script>
+</body>
+
+</html>

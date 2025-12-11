@@ -1,0 +1,130 @@
+header {
+    background-color: #0f0f1e; /* azul */
+    color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    display: flex; /* Usar Flexbox para alinhar lado a lado */
+    align-items: center; /* Alinha verticalmente o ícone e o texto */
+    gap: 8px; /* Espaçamento entre o texto e o ícone */
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(1.4rem, 4vw, 2rem); /* Tamanho responsivo do texto */
+    font-weight: 900; /* Manter a espessura do texto */
+    color: hwb(64 0% 0%); /* Cor do texto */
+    text-shadow: 0 0 10px rgba(238, 255, 0, 0.952); /* Efeito de brilho */
+}
+
+.logo-icon {
+    width: auto; /* Mantém a proporção da imagem */
+    max-height: clamp(1.5em, 6vw, 2em); /* Ajuste do tamanho do ícone */
+    display: block; /* Garante que o ícone seja tratado como bloco */
+}
+
+.topo-conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* espaçamento entre título, pesquisa e botão */
+}
+
+.topo-conteudo h1 {
+    margin: 0;
+    font-size: 28px;
+    text-align: center;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.search-box input {
+    padding: 10px;
+    border: none;
+    outline: none;
+    width: 250px;
+}
+
+.search-box button {
+    padding: 10px;
+    background: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.search-box button:hover {
+    background: #555;
+}
+
+.admin-button {
+    position: fixed;
+    bottom: 20px;   /* distância do fundo da tela */
+    right: 20px;    /* distância da borda direita */
+    padding: 12px 20px;
+    background: #444;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 1000;  /* garante que fique acima de outros elementos */
+    transition: 0.2s;
+}
+
+.admin-button:hover {
+    background: #666;
+}
+.categoria-grupo {
+    margin-bottom: 40px;
+}
+
+.categoria-grupo h2 {
+    background-color: #0f0f1e;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 6px;
+}
+
+.produtos-categoria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.produto {
+    width: 200px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    transition: 0.2s;
+}
+
+.produto.fundo-azul {
+    background-color: #e6f0ff;
+}
+
+.produto.fundo-branco {
+    background-color: #ffffff;
+}
+
+.produto img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 6px;
+}
