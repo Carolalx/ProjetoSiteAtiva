@@ -12,7 +12,7 @@ header {
     display: flex; /* Usar Flexbox para alinhar lado a lado */
     align-items: center; /* Alinha verticalmente o ícone e o texto */
     gap: 8px; /* Espaçamento entre o texto e o ícone */
-    font-family: "Fredoka", sans-serif;
+    font-family: "Fredoka One", sans-serif;
     font-size: clamp(1.4rem, 4vw, 2rem); /* Tamanho responsivo do texto */
     font-weight: 900; /* Manter a espessura do texto */
     color: hwb(64 0% 0%); /* Cor do texto */
