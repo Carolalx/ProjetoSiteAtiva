@@ -1,70 +1,40 @@
-/* ================================================= */
-/* 1. ESTILOS BASE (DESKTOP-FIRST) */
-/* Aplicados a todas as telas, mas representando o layout Desktop */
-/* ================================================= */
-
-/* Estilos Gerais */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    background-color: #f4f4f4;
-}
-
-/* Container principal para o corpo do conteúdo (Limita a largura em desktop) */
-.container {
-    max-width: 1200px; /* Largura máxima para o conteúdo principal */
-    margin: 0 auto; /* Centraliza o container */
-    padding: 0 15px; /* Margem interna para evitar que o conteúdo toque as bordas */
-}
-
-/* HEADER */
 header {
-    background-color: #0f0f1e;
+    background-color: #0f0f1e; /* azul */
     color: white;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    padding: 20px 15px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    box-sizing: border-box;
 }
 
-/* LOGO */
 .logo {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-family: "Montserrat", sans-serif;
-    /* Tamanho responsivo: min: 1.4rem, ideal: 4vw, max: 2rem (limite de desktop) */
-    font-size: clamp(1.4rem, 4vw, 2rem);
-    font-weight: 900;
-    color: hwb(64 0% 0%);
-    text-shadow: 0 0 10px rgba(238, 255, 0, 0.952);
+    display: flex; /* Usar Flexbox para alinhar lado a lado */
+    align-items: center; /* Alinha verticalmente o ícone e o texto */
+    gap: 8px; /* Espaçamento entre o texto e o ícone */
+    font-family: "Fredoka", sans-serif;
+    font-size: clamp(1.4rem, 4vw, 2rem); /* Tamanho responsivo do texto */
+    font-weight: 900; /* Manter a espessura do texto */
+    color: hwb(64 0% 0%); /* Cor do texto */
+    text-shadow: 0 0 10px rgba(238, 255, 0, 0.952); /* Efeito de brilho */
 }
 
 .logo-icon {
-    width: auto;
-    /* Altura responsiva: min: 1.5em, ideal: 6vw, max: 2em (limite de desktop) */
-    max-height: clamp(1.5em, 6vw, 2em);
-    display: block;
+    width: auto; /* Mantém a proporção da imagem */
+    max-height: clamp(1.5em, 6vw, 2em); /* Ajuste do tamanho do ícone */
+    display: block; /* Garante que o ícone seja tratado como bloco */
 }
 
-/* TOPO CONTEUDO (Título e Pesquisa) */
 .topo-conteudo {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
-    width: 100%;
-    max-width: 600px; /* Limita a largura da busca em desktop */
+    gap: 15px; /* espaçamento entre título, pesquisa e botão */
 }
 
 .topo-conteudo h1 {
     margin: 0;
-    /* Ajuste de fonte para ser responsivo, com limite de 2rem */
-    font-size: clamp(1.5rem, 6vw, 2rem);
+    font-size: 28px;
     text-align: center;
 }
 
@@ -75,32 +45,45 @@ header {
     border: 1px solid #ccc;
     border-radius: 6px;
     overflow: hidden;
-    width: 100%;
 }
 
 .search-box input {
     padding: 10px;
     border: none;
     outline: none;
-    flex-grow: 1; /* Ocupa o máximo de espaço possível */
-    min-width: 50px;
+    width: 250px;
 }
 
 .search-box button {
-    padding: 10px 15px;
+    padding: 10px;
     background: #333;
     color: white;
     border: none;
     cursor: pointer;
     transition: 0.2s;
-    flex-shrink: 0;
 }
 
 .search-box button:hover {
     background: #555;
 }
 
-/* CATEGORIAS */
+.admin-button {
+    position: fixed;
+    bottom: 20px;   /* distância do fundo da tela */
+    right: 20px;    /* distância da borda direita */
+    padding: 12px 20px;
+    background: #444;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 1000;  /* garante que fique acima de outros elementos */
+    transition: 0.2s;
+}
+
+.admin-button:hover {
+    background: #666;
+}
 .categoria-grupo {
     margin-bottom: 40px;
 }
@@ -110,24 +93,17 @@ header {
     color: white;
     padding: 10px 15px;
     border-radius: 6px;
-    font-size: clamp(1.2rem, 4vw, 1.8rem);
 }
 
-/* PRODUTOS (LAYOUT FLEXÍVEL DE DESKTOP) */
 .produtos-categoria {
     display: flex;
-    flex-wrap: wrap; /* Permite que os produtos quebrem a linha */
+    flex-wrap: wrap;
     gap: 15px;
     margin-top: 15px;
-    justify-content: center; /* Centraliza os produtos em linhas incompletas */
 }
 
 .produto {
-    /* Define a largura ideal para que múltiplos produtos caibam por linha */
-    flex-basis: 200px;
-    flex-grow: 1; 
-    max-width: 100%; /* Garantia de não transbordar */
-    
+    width: 200px;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 3px 8px rgba(0,0,0,0.1);
@@ -136,7 +112,6 @@ header {
     align-items: center;
     padding: 10px;
     transition: 0.2s;
-    box-sizing: border-box;
 }
 
 .produto.fundo-azul {
@@ -152,57 +127,4 @@ header {
     height: auto;
     object-fit: cover;
     border-radius: 6px;
-}
-
-/* BOTÃO ADMIN */
-.admin-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 12px 20px;
-    background: #444;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    z-index: 1000;
-    transition: 0.2s;
-    font-size: clamp(0.8rem, 3vw, 1rem);
-}
-
-.admin-button:hover {
-    background: #666;
-}
-
-/* ================================================= */
-/* 2. MEDIA QUERIES (AJUSTES PARA TELAS MENORES) */
-/* Esta seção sobrescreve o Desktop-First em telas <= 600px */
-/* ================================================= */
-
-@media (max-width: 600px) {
-    /* Ajustes específicos para celulares */
-
-    .container {
-        /* Remove o padding lateral em telas pequenas se for necessário, 
-           mas geralmente mantemos um pequeno padding (10px) para bordas. */
-        padding: 0 10px;
-    }
-    
-    .produtos-categoria {
-        /* Reduz o espaçamento entre produtos em telas menores */
-        gap: 10px; 
-    }
-
-    .produto {
-        /* Força o produto a ocupar a largura total do container
-           para que eles se empilhem verticalmente, um por linha. */
-        flex-basis: 100%;
-    }
-    
-    .admin-button {
-        /* Ajusta a posição ou tamanho do botão em telas menores se necessário */
-        bottom: 10px;
-        right: 10px;
-        padding: 10px 15px;
-    }
 }
