@@ -1,9 +1,10 @@
-let adminLogado = false; // indica se o admin está logado
+let adminLogado = false;
 
 /* =====================================================
    CONFIGURAÇÃO
 ====================================================== */
 const SENHA_ADMIN = "Ativ@2#26";
+const VERSAO_PRODUTOS = "1.2"; // 🔴 ALTERE quando mudar o produtos.json
 
 /* =====================================================
    ELEMENTOS
@@ -26,7 +27,7 @@ const inputPesquisa = document.getElementById("pesquisa");
 const filtroCategoria = document.getElementById("filtroCategoria");
 
 /* =====================================================
-   FUNÇÃO: CONVERTER IMAGEM PARA BASE64
+   CONVERTER IMAGEM PARA BASE64
 ====================================================== */
 function imageToBase64(file) {
     return new Promise((resolve, reject) => {
@@ -38,14 +39,16 @@ function imageToBase64(file) {
 }
 
 /* =====================================================
-   FUNÇÃO: ADICIONAR PRODUTO NA TELA
+   ADICIONAR PRODUTO NA TELA
 ====================================================== */
 function adicionarProdutoNaTela(produto) {
-    let grupo = document.querySelector(`.categoria-grupo[data-categoria="${produto.categoria}"]`);
+    let grupo = document.querySelector(
+        `.categoria-grupo[data-categoria="${produto.categoria}"]`
+    );
 
     if (!grupo) {
         grupo = document.createElement("div");
-        grupo.classList.add("categoria-grupo");
+        grupo.className = "categoria-grupo";
         grupo.dataset.categoria = produto.categoria;
 
         const tituloCategoria = document.createElement("h2");
@@ -53,7 +56,7 @@ function adicionarProdutoNaTela(produto) {
         grupo.appendChild(tituloCategoria);
 
         const containerProdutos = document.createElement("div");
-        containerProdutos.classList.add("produtos-categoria");
+        containerProdutos.className = "produtos-categoria";
         grupo.appendChild(containerProdutos);
 
         const totalGrupos = document.querySelectorAll(".categoria-grupo").length;
@@ -65,7 +68,7 @@ function adicionarProdutoNaTela(produto) {
     const containerProdutos = grupo.querySelector(".produtos-categoria");
 
     const produtoDiv = document.createElement("div");
-    produtoDiv.classList.add("produto");
+    produtoDiv.className = "produto";
     produtoDiv.dataset.id = produto.id;
 
     const img = document.createElement("img");
@@ -81,8 +84,8 @@ function adicionarProdutoNaTela(produto) {
     if (adminLogado) {
         const btnDel = document.createElement("button");
         btnDel.textContent = "Excluir";
-        btnDel.classList.add("btn-del");
-        btnDel.addEventListener("click", () => deletarProduto(produto.id));
+        btnDel.className = "btn-del";
+        btnDel.onclick = () => deletarProduto(produto.id);
         produtoDiv.appendChild(btnDel);
     }
 
@@ -90,13 +93,13 @@ function adicionarProdutoNaTela(produto) {
 }
 
 /* =====================================================
-   FUNÇÃO: SALVAR PRODUTO NO LOCALSTORAGE
+   SALVAR PRODUTO NO LOCALSTORAGE
 ====================================================== */
 function salvarProduto(titulo, imagemUrl, categoria) {
     const lista = JSON.parse(localStorage.getItem("produtos")) || [];
 
     const novo = {
-        id: Date.now(),
+        id: Date.now() + Math.random(), // evita colisão
         titulo,
         imagemUrl,
         categoria
@@ -109,44 +112,53 @@ function salvarProduto(titulo, imagemUrl, categoria) {
 }
 
 /* =====================================================
-   CARREGAR PRODUTOS DO LOCALSTORAGE
+   CARREGAR PRODUTOS
 ====================================================== */
 function carregarProdutos() {
+    const versaoSalva = localStorage.getItem("versaoProdutos");
     const lista = JSON.parse(localStorage.getItem("produtos")) || [];
-    lista.forEach(p => adicionarProdutoNaTela(p));
 
-    // Se não tiver produtos no localStorage, carregar do JSON
-    if (lista.length === 0) {
+    // 🔄 Se o JSON mudou, recarrega tudo
+    if (versaoSalva !== VERSAO_PRODUTOS) {
+        localStorage.removeItem("produtos");
+        localStorage.setItem("versaoProdutos", VERSAO_PRODUTOS);
+        produtosContainer.innerHTML = "";
         carregarProdutosDeJSON();
+        return;
     }
+
+    lista.forEach(p => adicionarProdutoNaTela(p));
 }
 
 /* =====================================================
-   CARREGAR PRODUTOS DE UM JSON
+   CARREGAR PRODUTOS DO JSON
 ====================================================== */
 function carregarProdutosDeJSON() {
     fetch("produtos.json")
         .then(res => res.json())
         .then(lista => {
             lista.forEach(produto => {
-                salvarProduto(produto.titulo, produto.imagemUrl, produto.categoria);
-                adicionarProdutoNaTela(produto);
+                const id = salvarProduto(
+                    produto.titulo,
+                    produto.imagemUrl,
+                    produto.categoria
+                );
+                adicionarProdutoNaTela({ ...produto, id });
             });
         })
         .catch(err => console.error("Erro ao carregar JSON:", err));
 }
 
-// Inicializa produtos
+/* =====================================================
+   INICIALIZA
+====================================================== */
 carregarProdutos();
 
 /* =====================================================
    FORM - ADICIONAR PRODUTO
 ====================================================== */
-form.addEventListener("submit", async function (event) {
-    event.preventDefault();
-
-    const titulo = tituloInput.value;
-    const categoria = categoriaInput.value;
+form.addEventListener("submit", async e => {
+    e.preventDefault();
 
     if (!imagemInput.files[0]) {
         alert("Selecione uma imagem!");
@@ -155,11 +167,21 @@ form.addEventListener("submit", async function (event) {
 
     const imagemUrl = await imageToBase64(imagemInput.files[0]);
 
-    const id = salvarProduto(titulo, imagemUrl, categoria);
-    adicionarProdutoNaTela({ id, titulo, categoria, imagemUrl });
+    const id = salvarProduto(
+        tituloInput.value,
+        imagemUrl,
+        categoriaInput.value
+    );
 
-    alert("Produto adicionado!");
+    adicionarProdutoNaTela({
+        id,
+        titulo: tituloInput.value,
+        categoria: categoriaInput.value,
+        imagemUrl
+    });
+
     form.reset();
+    alert("Produto adicionado!");
 });
 
 /* =====================================================
@@ -172,70 +194,58 @@ function deletarProduto(id) {
     lista = lista.filter(p => p.id !== id);
     localStorage.setItem("produtos", JSON.stringify(lista));
 
-    const produtoDiv = document.querySelector(`.produto[data-id="${id}"]`);
-    if (produtoDiv) produtoDiv.remove();
-
-    alert("Produto deletado!");
+    document.querySelector(`.produto[data-id="${id}"]`)?.remove();
 }
 
 /* =====================================================
-   LOGIN DO ADMIN
+   LOGIN ADMIN
 ====================================================== */
-adminBtn.addEventListener("click", () => {
-    adminLogin.style.display = "block";
-});
+adminBtn.onclick = () => (adminLogin.style.display = "block");
 
-loginBtn.addEventListener("click", () => {
-    if (adminPass.value === SENHA_ADMIN) {
-        alert("Acesso liberado!");
-        adminLogin.style.display = "none";
-        areaAdicionar.style.display = "block";
-        adminLogado = true;
-
-        produtosContainer.innerHTML = "";
-        carregarProdutos();
-    } else {
+loginBtn.onclick = () => {
+    if (adminPass.value !== SENHA_ADMIN) {
         alert("Senha incorreta!");
+        return;
     }
-});
+
+    adminLogado = true;
+    adminLogin.style.display = "none";
+    areaAdicionar.style.display = "block";
+
+    produtosContainer.innerHTML = "";
+    carregarProdutos();
+};
 
 /* =====================================================
-   PESQUISA POR NOME
+   PESQUISA
 ====================================================== */
-inputPesquisa.addEventListener("keyup", function () {
+inputPesquisa.addEventListener("keyup", () => {
     const termo = inputPesquisa.value.toLowerCase();
-    const grupos = document.querySelectorAll(".categoria-grupo");
 
-    grupos.forEach(grupo => {
-        const produtos = grupo.querySelectorAll(".produto");
-        let temProdutoVisivel = false;
+    document.querySelectorAll(".categoria-grupo").forEach(grupo => {
+        let visivel = false;
 
-        produtos.forEach(produto => {
+        grupo.querySelectorAll(".produto").forEach(produto => {
             const nome = produto.querySelector("h3").textContent.toLowerCase();
-            if (nome.includes(termo)) {
-                produto.style.display = "block";
-                temProdutoVisivel = true;
-            } else {
-                produto.style.display = "none";
-            }
+            const show = nome.includes(termo);
+            produto.style.display = show ? "block" : "none";
+            if (show) visivel = true;
         });
 
-        grupo.style.display = temProdutoVisivel ? "block" : "none";
+        grupo.style.display = visivel ? "block" : "none";
     });
 });
 
 /* =====================================================
    FILTRO POR CATEGORIA
 ====================================================== */
-filtroCategoria.addEventListener("change", function () {
-    const categoriaSel = filtroCategoria.value;
-    const grupos = document.querySelectorAll(".categoria-grupo");
+filtroCategoria.addEventListener("change", () => {
+    const cat = filtroCategoria.value;
 
-    grupos.forEach(grupo => {
-        if (categoriaSel === "todas" || grupo.dataset.categoria === categoriaSel) {
-            grupo.style.display = "block";
-        } else {
-            grupo.style.display = "none";
-        }
+    document.querySelectorAll(".categoria-grupo").forEach(grupo => {
+        grupo.style.display =
+            cat === "todas" || grupo.dataset.categoria === cat
+                ? "block"
+                : "none";
     });
 });
