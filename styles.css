@@ -29,15 +29,16 @@ header {
 }
 
 .logo {
-    display: flex; /* Usar Flexbox para alinhar lado a lado */
-    align-items: center; /* Alinha verticalmente o ícone e o texto */
-    gap: 8px; /* Espaçamento entre o texto e o ícone */
-    font-family: "Montserrat", sans-serif;
-    font-size: clamp(1.4rem, 4vw, 2rem); /* Tamanho responsivo do texto */
-    font-weight: 900; /* Manter a espessura do texto */
-    color: hwb(64 0% 0%); /* Cor do texto */
-    text-shadow: 0 0 10px rgba(238, 255, 0, 0.952); /* Efeito de brilho */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: "Fredoka", sans-serif;
+    font-size: clamp(1.4rem, 4vw, 2rem);
+    font-weight: 700;
+    color: hwb(64 0% 0%);
+    text-shadow: 0 0 10px rgba(238, 255, 0, 0.952);
 }
+
 
 .logo-icon {
     width: auto; /* Mantém a proporção da imagem */
