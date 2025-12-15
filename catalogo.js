@@ -4,7 +4,7 @@ let adminLogado = false;
    CONFIGURAÇÃO
 ====================================================== */
 const SENHA_ADMIN = "Ativ@2#26";
-const VERSAO_PRODUTOS = "1.2"; // 🔴 ALTERE quando mudar o produtos.json
+const VERSAO_PRODUTOS = "1.3"; // 🔴 ALTERE quando mudar o produtos.json
 
 /* =====================================================
    ELEMENTOS
