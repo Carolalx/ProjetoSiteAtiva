@@ -134,28 +134,28 @@
   },
   {
     "id": 20,
-    "titulo": "Filtros para aplicações diversas",
+    "titulo": "",
     "imagemUrl": "./img/aplDiv1.png",
     "categoria": "Filtros Aplicações Diversas",
     "descricao": "Filtros para compressores de ar, injetoras, equipamentos hidráulicos, filtros especiais por desenho ou amostra, nacionalização de filtros importados e projetos para sistemas de filtração."
   },
   {
     "id": 21,
-    "titulo": "Imagem Aplicação 2",
+    "titulo": "",
     "imagemUrl": "./img/aplDiv2.png",
     "categoria": "Filtros Aplicações Diversas",
     "descricao": ""
   },
   {
     "id": 22,
-    "titulo": "Imagem Aplicação 3",
+    "titulo": "",
     "imagemUrl": "./img/aplDiv3.png",
     "categoria": "Filtros Aplicações Diversas",
     "descricao": ""
   },
   {
     "id": 23,
-    "titulo": "Imagem Aplicação 4",
+    "titulo": "",
     "imagemUrl": "./img/aplDiv4.png",
     "categoria": "Filtros Aplicações Diversas",
     "descricao": ""
